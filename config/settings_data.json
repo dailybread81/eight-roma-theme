@@ -82,6 +82,7 @@
     "popover_border_radius": 0,
     "currency_code_enabled_product_pages": false,
     "currency_code_enabled_product_cards": true,
+    "quick_add": false,
     "mobile_quick_add": true,
     "quick_add_background": "{{ settings.color_palette.background }}",
     "quick_add_text": "{{ settings.color_palette.foreground }}",
