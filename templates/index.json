@@ -174,8 +174,8 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "capispalla",
-          "pantaloni-1"
+          "outerwear",
+          "trousers"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
@@ -268,7 +268,7 @@
       "settings": {
         "collection_list": [
           "hoodies",
-          "camicie",
+          "shirts",
           "t-shirts"
         ],
         "layout_type": "grid",
@@ -427,7 +427,8 @@
       "settings": {
         "collection_list": [
           "bags",
-          "sciarpe"
+          "sciarpe",
+          "scarves"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
