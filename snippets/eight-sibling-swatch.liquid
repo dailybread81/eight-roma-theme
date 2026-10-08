@@ -14,7 +14,7 @@
 {%- enddoc -%}
 
 {%- liquid
-  assign color_pattern = item.metafields.shopify['color-pattern'].value.first
+  assign color_pattern = item.metafields.shopify['color-pattern'].value | first
   assign item_label = color_pattern.label.value | default: item.title
 
   assign swatch_background = ''
