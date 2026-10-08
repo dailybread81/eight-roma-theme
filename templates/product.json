@@ -140,6 +140,15 @@
               },
               "blocks": {}
             },
+            "eight_size_guide_Lp4Tw9": {
+              "type": "eight-size-guide",
+              "settings": {
+                "label": "Guida taglie",
+                "padding-block-start": 4,
+                "padding-block-end": 8
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -394,6 +403,7 @@
             "divider_HrJgFt",
             "eight_siblings_Kq7RmX",
             "variant_picker_R3rGDr",
+            "eight_size_guide_Lp4Tw9",
             "buy_buttons_eYQEYi",
             "accordion_NKWPiW",
             "disclosures_hFEnPD"

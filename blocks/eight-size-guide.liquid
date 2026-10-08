@@ -1,0 +1,169 @@
+{%- doc -%}
+  Eight Roma — size guide link.
+
+  Opens the page referenced by the product's `theme.size_chart` metafield (page
+  reference) in a side drawer. Renders nothing when the product has no size guide,
+  so the block can sit in every product template.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign size_page = closest.product.metafields.theme.size_chart.value
+  assign heading_id = 'EightSizeGuide-' | append: block.id
+-%}
+
+{%- if size_page != blank -%}
+  <script
+    src="{{ 'dialog.js' | asset_url }}"
+    type="module"
+  ></script>
+
+  {% render 'dialog-styles' %}
+
+  <dialog-component
+    class="eight-size-guide spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    <button
+      type="button"
+      on:click="/showDialog"
+      class="button button-unstyled eight-size-guide__button"
+      aria-haspopup="dialog"
+    >
+      {{- block_settings.label | escape -}}
+    </button>
+
+    <dialog
+      ref="dialog"
+      class="eight-size-guide__drawer dialog-modal dialog-drawer color-custom-popover"
+      scroll-lock
+      aria-labelledby="{{ heading_id }}"
+    >
+      <h2
+        id="{{ heading_id }}"
+        class="eight-size-guide__title h4"
+      >
+        {{- block_settings.label | escape -}}
+      </h2>
+      <div class="eight-size-guide__content rte">
+        {{ size_page.content }}
+      </div>
+      <button
+        ref="closeButton"
+        on:click="/closeDialog"
+        class="button button-unstyled close-button eight-size-guide__close"
+        aria-label="{{ 'accessibility.close_dialog' | t }}"
+      >
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </button>
+    </dialog>
+  </dialog-component>
+{%- endif -%}
+
+{% stylesheet %}
+  .eight-size-guide__button {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    font-size: var(--font-paragraph--size);
+    color: var(--color-foreground);
+  }
+
+  .eight-size-guide__drawer {
+    position: fixed;
+    inset-block: 0;
+    inline-size: min(var(--sidebar-width, 32rem), 95vw);
+    max-inline-size: 95vw;
+    block-size: 100%;
+    max-block-size: 100dvh;
+    margin: 0;
+    margin-inline-start: auto;
+    border: var(--style-border-popover);
+    border-radius: 0;
+    box-shadow: var(--shadow-popover);
+    background-color: var(--color-background);
+    padding: var(--padding-4xl) var(--padding-xl) calc(var(--padding-xl) + var(--safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-5xl);
+    }
+  }
+
+  [dir='rtl'] .eight-size-guide__drawer[open] {
+    --start-x: -100%;
+  }
+
+  [dir='rtl'] .eight-size-guide__drawer[open].dialog-closing {
+    --end-x: -100%;
+  }
+
+  .eight-size-guide__title {
+    margin-block: 0 var(--margin-lg);
+  }
+
+  .eight-size-guide__content {
+    min-width: 0;
+  }
+
+  .eight-size-guide__content table {
+    width: 100%;
+  }
+
+  .eight-size-guide__close {
+    top: max(var(--margin-2xs), var(--safe-area-inset-top, 0px));
+    inset-inline-end: var(--margin-2xs);
+    opacity: 0.8;
+    animation: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.eight_size_guide",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.eight_size_guide"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.text",
+      "default": "Guida taglie"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.eight_size_guide",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

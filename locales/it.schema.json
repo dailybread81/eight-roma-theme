@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "eight_size_guide": "Guida taglie",
     "eight_siblings": "Varianti colore (prodotti correlati)",
     "eight_homepage_colors": "Colori homepage",
     "404": "404",
@@ -1104,6 +1105,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_size_guide": "Apre in un pannello laterale la pagina indicata nel metafield prodotto Size chart (theme.size_chart). Non compare sui prodotti senza guida.",
     "eight_copyright_text": "Compare dopo il simbolo ©. Lascia vuoto per usare il nome del negozio con link alla home. Esempio: Eight Roma S.r.l. – P.IVA 01234567890",
     "eight_siblings": "Mostra i prodotti del metafield custom.sibilings come swatch colore. Usa il metafield di categoria Colore se compilato, altrimenti la foto del prodotto.",
     "eight_home_colors": "Vale solo per la homepage. Le altre pagine mantengono i colori di header e footer impostati nelle rispettive sezioni.",
