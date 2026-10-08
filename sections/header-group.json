@@ -77,7 +77,7 @@
         "actions_font": "body",
         "actions_text_case": "none",
         "background_color_top": "{{ settings.color_palette.background }}",
-        "text_color_top": "#FFFFFF",
+        "text_color_top": "{{ settings.color_palette.foreground }}",
         "background_color_bottom": "",
         "text_color_bottom": "",
         "bubble_style": "default",
@@ -88,7 +88,7 @@
         "text_color_transparent_home": "#FFFFFF",
         "enable_transparent_header_product": true,
         "product_inverse_logo": false,
-        "text_color_transparent_product": "",
+        "text_color_transparent_product": "#FFFFFF",
         "enable_transparent_header_collection": false,
         "collection_inverse_logo": false,
         "text_color_transparent_collection": ""
