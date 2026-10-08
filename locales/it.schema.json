@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "eight_homepage_colors": "Colori homepage",
     "404": "404",
     "colors": "Palette colori",
     "custom_section": "Sezione personalizzata",
@@ -171,6 +172,10 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "eight_home_colors_enabled": "Usa colori personalizzati in homepage",
+    "eight_home_header_color": "Sfondo header",
+    "eight_home_dropdown_color": "Sfondo menu a tendina",
+    "eight_home_footer_color": "Sfondo footer",
     "alignment": "Allineamento",
     "autoplay": "Riproduzione automatica",
     "background": "Sfondo",
@@ -1091,6 +1096,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_home_colors": "Vale solo per la homepage. Le altre pagine mantengono i colori di header e footer impostati nelle rispettive sezioni.",
     "carousel_layout_on_mobile": "Sui dispositivi mobili viene sempre utilizzato il carosello.",
     "video_alt_text": "Descrivi il video per gli utenti di tecnologie assistive",
     "video_autoplay": "I video saranno senza audio per impostazione predefinita",

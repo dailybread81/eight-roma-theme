@@ -223,6 +223,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "actions_display_style": "Icons are always used on mobile",
     "applies_on_image_only": "Applies to images only",
     "aspect_ratio_adjusted": "Adjusted in some layouts",
@@ -252,6 +253,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "eight_homepage_colors": "Homepage colors",
     "column": "Column",
     "product_title": "Product title",
     "custom_liquid": "Custom Liquid",
@@ -746,6 +748,10 @@
     "below_media": "Below media"
   },
   "settings": {
+    "eight_home_colors_enabled": "Use custom colors on the homepage",
+    "eight_home_header_color": "Header background",
+    "eight_home_dropdown_color": "Dropdown menu background",
+    "eight_home_footer_color": "Footer background",
     "accordion": "Accordion",
     "account": "Account",
     "actions_display_style": "Menu style",

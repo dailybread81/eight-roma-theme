@@ -8,8 +8,14 @@
     assign image = settings.logo_inverse
   endif
 
-  if section_settings.background_color != blank
-    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  # Eight Roma: on the homepage the footer uses the color from theme settings > Homepage colors
+  assign section_background = section_settings.background_color
+  if template.name == 'index' and settings.eight_home_colors_enabled and settings.eight_home_footer_color != blank
+    assign section_background = settings.eight_home_footer_color
+  endif
+
+  if section_background != blank
+    render 'contrast-override', background_color: section_background, section_id: section.id
   endif
 %}
 
@@ -30,10 +36,10 @@
 {%- endif -%}
 
 <div
-  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="section-background{% if section_background != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
 <div
-  class="section section--{{ section_settings.section_width }}{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="section section--{{ section_settings.section_width }}{% if section_background != blank %} color-custom-{{ section.id }}{% endif %}"
 >
   <div
     class="

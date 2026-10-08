@@ -70,6 +70,42 @@
     ]
   },
   {
+    "name": "t:names.eight_homepage_colors",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:info.eight_home_colors"
+      },
+      {
+        "type": "checkbox",
+        "id": "eight_home_colors_enabled",
+        "label": "t:settings.eight_home_colors_enabled",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "eight_home_header_color",
+        "label": "t:settings.eight_home_header_color",
+        "default": "#F4CEAB",
+        "visible_if": "{{ settings.eight_home_colors_enabled }}"
+      },
+      {
+        "type": "color",
+        "id": "eight_home_dropdown_color",
+        "label": "t:settings.eight_home_dropdown_color",
+        "default": "#F4CEAB",
+        "visible_if": "{{ settings.eight_home_colors_enabled }}"
+      },
+      {
+        "type": "color",
+        "id": "eight_home_footer_color",
+        "label": "t:settings.eight_home_footer_color",
+        "default": "#F4CEAB",
+        "visible_if": "{{ settings.eight_home_colors_enabled }}"
+      }
+    ]
+  },
+  {
     "name": "t:names.typography",
     "settings": [
       {

@@ -1,0 +1,42 @@
+{%- doc -%}
+  Eight Roma — homepage header and dropdown colors.
+
+  Overrides the header row and dropdown (submenu) backgrounds on the homepage only,
+  using theme settings > Homepage colors. The header reads these through the
+  `--color-background-*-row` and `--color-submenu` custom properties that its
+  underlays paint, so the merchant's header section settings stay untouched for
+  every other page. The footer override lives in the footer group sections, where
+  `contrast-override` also adjusts text contrast.
+
+  Rendered from layout/theme.liquid after the color palette.
+
+  @example
+  {% render 'eight-home-colors' %}
+{%- enddoc -%}
+
+{%- if template.name == 'index' and settings.eight_home_colors_enabled -%}
+  {%- liquid
+    assign header_color = settings.eight_home_header_color
+    assign dropdown_color = settings.eight_home_dropdown_color
+  -%}
+  {%- if header_color != blank or dropdown_color != blank -%}
+    {% style %}
+      {%- if header_color != blank %}
+        #header-component {
+          --color-background-top-row: {{ header_color }} !important;
+          --color-background-bottom-row: {{ header_color }} !important;
+        }
+      {%- endif %}
+
+      #header-component .header__underlay {
+        {%- if header_color != blank %}
+          /* Transparent header: on hover/focus the theme swaps the rows to --color-background */
+          --color-background: {{ header_color }};
+        {%- endif %}
+        {%- if dropdown_color != blank %}
+          --color-submenu: {{ dropdown_color }} !important;
+        {%- endif %}
+      }
+    {% endstyle %}
+  {%- endif -%}
+{%- endif -%}
