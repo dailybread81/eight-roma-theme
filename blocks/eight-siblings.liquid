@@ -28,7 +28,7 @@
 -%}
 
 {%- assign dbg_mf = product_resource.metafields.shopify['color-pattern'] -%}
-<!-- eight-debug type={{ dbg_mf.type }} size={{ dbg_mf.value.size }} first={{ dbg_mf.value.first.label }} firstval={{ dbg_mf.value.first.label.value }} color={{ dbg_mf.value.first.color.value }} sys={{ dbg_mf.value.first.system.type }} raw={{ dbg_mf }} dot={{ product_resource.metafields.shopify.color-pattern.value.first.label.value }} -->
+<!-- eight-debug idx0={{ dbg_mf.value[0].label.value }} isnil={% if dbg_mf.value.first == nil %}nil{% else %}obj{% endif %} glob={{ metaobjects['shopify--color-pattern'].nero.label.value }} globcolor={{ metaobjects['shopify--color-pattern'].nero.color.value }} globsys={{ metaobjects['shopify--color-pattern'].nero.system.handle }} -->
 {%- if total > 1 -%}
   {%- assign label_id = 'EightSiblings-' | append: block.id -%}
   <div
