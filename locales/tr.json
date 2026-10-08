@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Kargo</a>, ödeme sayfasında hesaplanır.",
     "taxes_included": "Vergiler dahildir.",
     "product_badge_sold_out": "Tükendi",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "İndirimde",
     "search_input_label": "Ara",
     "search_input_placeholder": "Ara",

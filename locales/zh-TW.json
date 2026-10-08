@@ -164,6 +164,7 @@
     "shipping_policy_html": "結帳時計算<a href=\"{{ link }}\">運費</a>。",
     "taxes_included": "已包含稅額。",
     "product_badge_sold_out": "售罄",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "特賣",
     "search_input_label": "搜尋",
     "search_input_placeholder": "搜尋",
