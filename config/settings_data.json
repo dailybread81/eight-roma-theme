@@ -16,6 +16,7 @@
     "eight_home_header_color": "{{ settings.color_palette.color3 }}",
     "eight_home_dropdown_color": "{{ settings.color_palette.color3 }}",
     "eight_home_footer_color": "{{ settings.color_palette.color3 }}",
+    "eight_about_background_color": "{{ settings.color_palette.color3 }}",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "sans_serif_n4",
     "type_subheading_font": "sans_serif_n4",
