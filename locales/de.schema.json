@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "eight_store_locator": "Store locator",
+    "eight_store": "Store",
     "eight_size_guide": "Size guide",
     "eight_siblings": "Color siblings",
     "eight_homepage_colors": "Homepage colors",
@@ -174,6 +176,18 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "eight_store_show_map": "Show map",
+    "eight_store_map_zoom": "Map zoom",
+    "eight_store_consent_text": "Text before the map loads",
+    "eight_store_load_map_label": "Load map button",
+    "eight_store_show_on_map_label": "Show on map label",
+    "eight_store_name": "Store name",
+    "eight_store_address": "Address",
+    "eight_store_map_query": "Map search",
+    "eight_store_hours": "Opening hours",
+    "eight_store_phone": "Phone",
+    "eight_store_email": "Email",
+    "eight_store_directions_label": "Directions label",
     "eight_copyright_text": "Copyright text",
     "eight_copyright_show_year": "Show current year",
     "eight_siblings_heading": "Heading",
@@ -882,6 +896,7 @@
     "direction_top_start": "Oben links"
   },
   "content": {
+    "eight_store_map": "Map",
     "background_video": "Hintergrundvideo",
     "describe_the_video_for": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Die Breite wird für Mobilgeräte automatisch optimiert.",
@@ -1105,6 +1120,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "eight_store_map_query": "Optional. Text used to find the store on Google Maps, e.g. \"Eight Roma, Via Euripide 4, Roma\". Defaults to the address.",
     "eight_size_guide": "Opens the page set in the product's Size chart metafield (theme.size_chart) in a side drawer. Hidden on products without a size guide.",
     "eight_copyright_text": "Shown after the © symbol. Leave empty to use the store name linked to the homepage. Example: Eight Roma S.r.l. – VAT 01234567890",
     "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",

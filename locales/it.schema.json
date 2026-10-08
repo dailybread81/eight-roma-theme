@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "eight_store_locator": "Store locator",
+    "eight_store": "Negozio",
     "eight_size_guide": "Guida taglie",
     "eight_siblings": "Varianti colore (prodotti correlati)",
     "eight_homepage_colors": "Colori homepage",
@@ -174,6 +176,18 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "eight_store_show_map": "Mostra mappa",
+    "eight_store_map_zoom": "Zoom mappa",
+    "eight_store_consent_text": "Testo prima di caricare la mappa",
+    "eight_store_load_map_label": "Pulsante carica mappa",
+    "eight_store_show_on_map_label": "Etichetta \"vedi sulla mappa\"",
+    "eight_store_name": "Nome negozio",
+    "eight_store_address": "Indirizzo",
+    "eight_store_map_query": "Ricerca su mappa",
+    "eight_store_hours": "Orari",
+    "eight_store_phone": "Telefono",
+    "eight_store_email": "Email",
+    "eight_store_directions_label": "Etichetta indicazioni",
     "eight_copyright_text": "Testo copyright",
     "eight_copyright_show_year": "Mostra anno corrente",
     "eight_siblings_heading": "Titolo",
@@ -882,6 +896,7 @@
     "direction_top_start": "In alto a sinistra"
   },
   "content": {
+    "eight_store_map": "Mappa",
     "advanced": "Avanzate",
     "background_image": "Immagine di sfondo",
     "background_video": "Video di sfondo",
@@ -1105,6 +1120,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_store_map_query": "Facoltativo. Testo usato per trovare il negozio su Google Maps, es. \"Eight Roma, Via Euripide 4, Roma\". Se vuoto usa l'indirizzo.",
     "eight_size_guide": "Apre in un pannello laterale la pagina indicata nel metafield prodotto Size chart (theme.size_chart). Non compare sui prodotti senza guida.",
     "eight_copyright_text": "Compare dopo il simbolo ©. Lascia vuoto per usare il nome del negozio con link alla home. Esempio: Eight Roma S.r.l. – P.IVA 01234567890",
     "eight_siblings": "Mostra i prodotti del metafield custom.sibilings come swatch colore. Usa il metafield di categoria Colore se compilato, altrimenti la foto del prodotto.",

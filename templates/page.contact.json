@@ -56,10 +56,23 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "details": {
+          "type": "text",
+          "name": "t:names.content",
+          "settings": {
+            "text": "<p>Per informazioni su ordini, taglie e collaborazioni scrivici a <a href=\"mailto:info@eight-roma.it\">info@eight-roma.it</a> oppure compila il modulo qui sotto.</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "title",
+        "details",
         "content"
       ],
       "settings": {
@@ -90,7 +103,7 @@
               "type": "contact-form-submit-button",
               "static": true,
               "settings": {
-                "label": "Submit",
+                "label": "Invia",
                 "style_class": "button",
                 "width": "fit-content",
                 "custom_width": 100,
@@ -132,10 +145,44 @@
         "padding-block-start": 32,
         "padding-block-end": 32
       }
+    },
+    "stores": {
+      "type": "eight-store-locator",
+      "blocks": {
+        "store_euripide": {
+          "type": "store",
+          "settings": {
+            "name": "Eight Roma — Studio",
+            "address": "Via Euripide 4\n00125 Roma (RM)",
+            "map_query": "Via Euripide 4, 00125 Roma",
+            "hours": "",
+            "phone": "+39 06 8854 9080",
+            "email": "info@eight-roma.it",
+            "directions_label": "Indicazioni"
+          }
+        }
+      },
+      "block_order": [
+        "store_euripide"
+      ],
+      "settings": {
+        "heading": "Dove trovarci",
+        "heading_preset": "h3",
+        "text": "<p>Il nostro studio a Roma, dove disegniamo e realizziamo ogni capo.</p>",
+        "show_map": true,
+        "map_height": 480,
+        "map_zoom": 15,
+        "consent_text": "La mappa è fornita da Google Maps, che può impostare cookie di terze parti.",
+        "load_map_label": "Mostra mappa",
+        "show_on_map_label": "Vedi sulla mappa",
+        "padding-block-start": 64,
+        "padding-block-end": 96
+      }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "stores"
   ]
 }

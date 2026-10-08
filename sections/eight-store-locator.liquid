@@ -1,0 +1,426 @@
+{% comment %}
+  Section contract.
+  Eight Roma store locator: a list of stores (one block each) next to a Google Maps
+  embed. The map loads only when the visitor asks for it, because the embed sets
+  third-party cookies; selecting a store points the map at that store.
+  Behavior lives in assets/eight-store-locator.js.
+  @example
+  <!-- Add "Store locator" to a page template and add one Store block per shop -->
+{% endcomment %}
+
+{%- liquid
+  if section.settings.background_color != blank
+    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  endif
+
+  assign first_query = ''
+  for block in section.blocks
+    assign store_query = block.settings.map_query | default: block.settings.address | strip_html | strip_newlines
+    if store_query != blank
+      assign first_query = store_query
+      break
+    endif
+  endfor
+-%}
+
+<script
+  src="{{ 'eight-store-locator.js' | asset_url }}"
+  type="module"
+></script>
+
+<div
+  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+<div
+  class="section section--page-width{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+>
+  <eight-store-locator
+    class="eight-stores spacing-style"
+    style="{% render 'spacing-style', settings: section.settings %} --eight-map-height: {{ section.settings.map_height }}px;"
+    data-zoom="{{ section.settings.map_zoom }}"
+  >
+    <div class="eight-stores__intro">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="eight-stores__heading {{ section.settings.heading_preset }}">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="eight-stores__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="eight-stores__layout{% unless section.settings.show_map and first_query != blank %} eight-stores__layout--no-map{% endunless %}">
+      <ul class="eight-stores__list" role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign store_query = block.settings.map_query | default: block.settings.address | strip_html | strip_newlines
+          -%}
+          <li
+            class="eight-stores__item{% if forloop.first %} is-selected{% endif %}"
+            data-map-query="{{ store_query | escape }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.name != blank -%}
+              <h3 class="eight-stores__name h5">{{ block.settings.name | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.address != blank -%}
+              <address class="eight-stores__address">{{ block.settings.address | escape | newline_to_br }}</address>
+            {%- endif -%}
+            {%- if block.settings.hours != blank -%}
+              <div class="eight-stores__hours rte">{{ block.settings.hours }}</div>
+            {%- endif -%}
+            <p class="eight-stores__contacts">
+              {%- if block.settings.phone != blank -%}
+                <a href="tel:{{ block.settings.phone | remove: ' ' }}">{{ block.settings.phone | escape }}</a>
+              {%- endif -%}
+              {%- if block.settings.email != blank -%}
+                <a href="mailto:{{ block.settings.email }}">{{ block.settings.email | escape }}</a>
+              {%- endif -%}
+            </p>
+            <div class="eight-stores__actions">
+              {%- if store_query != blank -%}
+                <a
+                  class="eight-stores__link"
+                  href="https://www.google.com/maps/dir/?api=1&destination={{ store_query | url_encode }}"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {{- block.settings.directions_label | escape -}}
+                </a>
+              {%- endif -%}
+              {%- if section.settings.show_map and store_query != blank and section.blocks.size > 1 -%}
+                <button
+                  type="button"
+                  class="button-unstyled eight-stores__link"
+                  data-show-on-map
+                  aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+                >
+                  {{- section.settings.show_on_map_label | escape -}}
+                </button>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if section.settings.show_map and first_query != blank -%}
+        <div class="eight-stores__map">
+          <div class="eight-stores__consent" data-map-consent>
+            <p class="eight-stores__consent-text">{{ section.settings.consent_text | escape }}</p>
+            <button
+              type="button"
+              class="button button-secondary"
+              data-load-map
+            >
+              {{- section.settings.load_map_label | escape -}}
+            </button>
+          </div>
+          <iframe
+            class="eight-stores__frame"
+            title="{{ section.settings.heading | default: 'Map' | escape }}"
+            data-src-base="https://maps.google.com/maps?output=embed&z={{ section.settings.map_zoom }}&q="
+            data-query="{{ first_query | escape }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            hidden
+          ></iframe>
+        </div>
+      {%- endif -%}
+    </div>
+  </eight-store-locator>
+</div>
+
+{% stylesheet %}
+  .eight-stores {
+    display: grid;
+    gap: var(--gap-2xl, 48px);
+  }
+
+  .eight-stores__intro {
+    display: grid;
+    gap: var(--gap-md, 16px);
+    max-inline-size: 40rem;
+  }
+
+  .eight-stores__heading {
+    margin: 0;
+  }
+
+  .eight-stores__layout {
+    display: grid;
+    gap: var(--gap-2xl, 48px);
+    min-width: 0;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+      align-items: start;
+    }
+  }
+
+  .eight-stores__layout--no-map {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .eight-stores__list {
+    display: grid;
+    gap: var(--gap-xl, 32px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .eight-stores__item {
+    display: grid;
+    gap: var(--gap-xs, 8px);
+    padding-inline-start: var(--padding-md, 16px);
+    border-inline-start: 1px solid transparent;
+    transition: border-color var(--animation-speed) var(--animation-easing);
+  }
+
+  .eight-stores__item.is-selected {
+    border-inline-start-color: var(--color-foreground);
+  }
+
+  .eight-stores__name {
+    margin: 0;
+  }
+
+  .eight-stores__address {
+    font-style: normal;
+  }
+
+  .eight-stores__hours > :last-child,
+  .eight-stores__contacts {
+    margin: 0;
+  }
+
+  .eight-stores__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-md, 16px);
+  }
+
+  .eight-stores__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-md, 16px);
+    margin-block-start: var(--margin-xs, 8px);
+  }
+
+  .eight-stores__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    font-size: inherit;
+    cursor: pointer;
+  }
+
+  .eight-stores__map {
+    position: relative;
+    block-size: var(--eight-map-height);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5, 0.05));
+  }
+
+  .eight-stores__consent {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: var(--gap-md, 16px);
+    padding: var(--padding-xl, 24px);
+    text-align: center;
+  }
+
+  .eight-stores__consent-text {
+    max-inline-size: 28rem;
+    margin: 0;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text, 0.7));
+  }
+
+  .eight-stores__frame {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    border: 0;
+    filter: grayscale(1);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.eight_store_locator",
+  "tag": "section",
+  "class": "eight-store-locator-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Store"
+    },
+    {
+      "type": "select",
+      "id": "heading_preset",
+      "label": "t:settings.preset",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:options.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:options.h4"
+        }
+      ],
+      "default": "h3"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text"
+    },
+    {
+      "type": "header",
+      "content": "t:content.eight_store_map"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_map",
+      "label": "t:settings.eight_store_show_map",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "map_height",
+      "label": "t:settings.height",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 480,
+      "visible_if": "{{ section.settings.show_map }}"
+    },
+    {
+      "type": "range",
+      "id": "map_zoom",
+      "label": "t:settings.eight_store_map_zoom",
+      "min": 10,
+      "max": 19,
+      "step": 1,
+      "default": 15,
+      "visible_if": "{{ section.settings.show_map }}"
+    },
+    {
+      "type": "text",
+      "id": "consent_text",
+      "label": "t:settings.eight_store_consent_text",
+      "default": "La mappa è fornita da Google Maps, che può impostare cookie di terze parti.",
+      "visible_if": "{{ section.settings.show_map }}"
+    },
+    {
+      "type": "text",
+      "id": "load_map_label",
+      "label": "t:settings.eight_store_load_map_label",
+      "default": "Mostra mappa",
+      "visible_if": "{{ section.settings.show_map }}"
+    },
+    {
+      "type": "text",
+      "id": "show_on_map_label",
+      "label": "t:settings.eight_store_show_on_map_label",
+      "default": "Vedi sulla mappa",
+      "visible_if": "{{ section.settings.show_map }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store",
+      "name": "t:names.eight_store",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "t:settings.eight_store_name"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "t:settings.eight_store_address"
+        },
+        {
+          "type": "text",
+          "id": "map_query",
+          "label": "t:settings.eight_store_map_query",
+          "info": "t:info.eight_store_map_query"
+        },
+        {
+          "type": "richtext",
+          "id": "hours",
+          "label": "t:settings.eight_store_hours"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "t:settings.eight_store_phone"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "t:settings.eight_store_email"
+        },
+        {
+          "type": "text",
+          "id": "directions_label",
+          "label": "t:settings.eight_store_directions_label",
+          "default": "Indicazioni"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.eight_store_locator",
+      "blocks": [
+        {
+          "type": "store"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
