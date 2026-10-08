@@ -12,6 +12,10 @@
     "logo": "shopify://shop_images/eightvectorlogoblack.svg",
     "logo_inverse": "shopify://shop_images/eightvectorlogowhite.svg",
     "favicon": "shopify://shop_images/2222_2x-100.jpg",
+    "eight_home_colors_enabled": true,
+    "eight_home_header_color": "{{ settings.color_palette.color3 }}",
+    "eight_home_dropdown_color": "{{ settings.color_palette.color3 }}",
+    "eight_home_footer_color": "{{ settings.color_palette.color3 }}",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "sans_serif_n4",
     "type_subheading_font": "sans_serif_n4",
@@ -100,7 +104,7 @@
       "foreground": "#000000",
       "color1": "#383838",
       "color2": "#f2f2f2",
-      "color3": "#DCD2C8"
+      "color3": "#E2D9C7"
     }
   },
   "presets": {
