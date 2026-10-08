@@ -267,12 +267,13 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
+          "felpe",
           "camicie",
           "t-shirts"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "columns": 2,
+        "columns": 3,
         "mobile_columns": "1",
         "mobile_card_size": "60cqw",
         "columns_gap": 0,
