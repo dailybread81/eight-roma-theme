@@ -56,24 +56,32 @@
   transform: none;
 }
 
-/* 4. Buttons: fill wipes in from the left, out to the right */
+/* 4. Buttons: fill wipes in from the left, out to the right.
+      Zero-specificity selectors, so components that position their own buttons
+      (skip link, quick add, overlays) keep their layout. */
 @media (any-pointer: fine) {
-  :is(.button, .button-secondary):not(
-      .button-unstyled,
-      .shopify-payment-button__button,
-      [disabled],
-      [aria-disabled='true']
+  :where(.button, .button-secondary):not(
+      :where(
+        .button-unstyled,
+        .shopify-payment-button__button,
+        .skip-to-content-link,
+        [disabled],
+        [aria-disabled='true']
+      )
     ) {
     position: relative;
     isolation: isolate;
     overflow: hidden;
   }
 
-  :is(.button, .button-secondary):not(
-      .button-unstyled,
-      .shopify-payment-button__button,
-      [disabled],
-      [aria-disabled='true']
+  :where(.button, .button-secondary):not(
+      :where(
+        .button-unstyled,
+        .shopify-payment-button__button,
+        .skip-to-content-link,
+        [disabled],
+        [aria-disabled='true']
+      )
     )::before {
     content: '';
     position: absolute;
@@ -99,11 +107,11 @@
     --button-background-color: var(--color-primary-button-background);
   }
 
-  .button-secondary:hover {
+  .button-secondary:not(.skip-to-content-link):hover {
     --button-background-color: var(--color-secondary-button-background);
   }
 
-  :is(.button, .button-secondary):not(.button-unstyled, [disabled], [aria-disabled='true']):is(:hover, :focus-visible)::before {
+  :where(.button, .button-secondary):not(:where(.button-unstyled, .skip-to-content-link, [disabled], [aria-disabled='true'])):is(:hover, :focus-visible)::before {
     transform: scaleX(1);
     transform-origin: left center;
   }
