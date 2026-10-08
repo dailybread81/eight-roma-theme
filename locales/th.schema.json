@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "eight_siblings": "Color siblings",
+    "eight_homepage_colors": "Homepage colors",
     "404": "404",
     "colors": "จานสี",
     "custom_section": "ส่วนที่กำหนดเอง",
@@ -171,6 +173,13 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "eight_siblings_heading": "Heading",
+    "eight_siblings_swatch_size": "Swatch width",
+    "eight_siblings_swatch_ratio": "Swatch shape",
+    "eight_home_colors_enabled": "Use custom colors on the homepage",
+    "eight_home_header_color": "Header background",
+    "eight_home_dropdown_color": "Dropdown menu background",
+    "eight_home_footer_color": "Footer background",
     "alignment": "การจัดตำแหน่ง",
     "autoplay": "เล่นอัตโนมัติ",
     "background": "พื้นหลัง",
@@ -586,6 +595,8 @@
     "title_preset": "พรีเซ็ตชื่อ"
   },
   "options": {
+    "eight_siblings_square": "Square",
+    "eight_siblings_portrait": "Portrait",
     "apple": "Apple",
     "arrow": "ลูกศร",
     "auto": "อัตโนมัติ",
@@ -1091,6 +1102,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",
+    "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "video_alt_text": "โปรดอธิบายวิดีโอสำหรับผู้ใช้เทคโนโลยีความช่วยเหลือพิเศษ",
     "video_autoplay": "วิดีโอจะถูกปิดเสียงตามค่าเริ่มต้น",
     "video_external": "ใช้ URL ของ YouTube หรือ Vimeo",

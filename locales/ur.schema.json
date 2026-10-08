@@ -215,6 +215,8 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",
+    "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "actions_display_style": "موبائل پر ہمیشہ آئیکن استعمال ہوتے ہیں",
     "applies_on_image_only": "صرف تصاویر پر لاگو ہوتا ہے",
     "aspect_ratio_adjusted": "کچھ لے آؤٹ میں ایڈجسٹ کیا گیا",
@@ -244,6 +246,8 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "eight_siblings": "Color siblings",
+    "eight_homepage_colors": "Homepage colors",
     "column": "کالم",
     "product_title": "پروڈکٹ کا ٹائٹل",
     "custom_liquid": "کسٹم Liquid",
@@ -406,6 +410,8 @@
     "comparison_slider": "موازنہ کرنے والا سلائیڈر"
   },
   "options": {
+    "eight_siblings_square": "Square",
+    "eight_siblings_portrait": "Portrait",
     "above_carousel": "کیرول کے اوپر",
     "accent": "ایکسنٹ",
     "all": "سبھی",
@@ -688,6 +694,13 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "eight_siblings_heading": "Heading",
+    "eight_siblings_swatch_size": "Swatch width",
+    "eight_siblings_swatch_ratio": "Swatch shape",
+    "eight_home_colors_enabled": "Use custom colors on the homepage",
+    "eight_home_header_color": "Header background",
+    "eight_home_dropdown_color": "Dropdown menu background",
+    "eight_home_footer_color": "Footer background",
     "accordion": "ایکارڈین",
     "account": "اکاؤنٹ",
     "actions_display_style": "مینو کا اسٹائل",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "eight_siblings": "Color siblings",
+    "eight_homepage_colors": "Homepage colors",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -171,6 +173,13 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "eight_siblings_heading": "Heading",
+    "eight_siblings_swatch_size": "Swatch width",
+    "eight_siblings_swatch_ratio": "Swatch shape",
+    "eight_home_colors_enabled": "Use custom colors on the homepage",
+    "eight_home_header_color": "Header background",
+    "eight_home_dropdown_color": "Dropdown menu background",
+    "eight_home_footer_color": "Footer background",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",
@@ -586,6 +595,8 @@
     "title_preset": "標題預設設定"
   },
   "options": {
+    "eight_siblings_square": "Square",
+    "eight_siblings_portrait": "Portrait",
     "apple": "Apple",
     "arrow": "箭頭",
     "auto": "自動",
@@ -1091,6 +1102,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",
+    "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",
     "video_alt_text": "為使用輔助技術的使用者描述影片",
     "video_autoplay": "影片預設為靜音播放",

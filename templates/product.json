@@ -129,6 +129,17 @@
               },
               "blocks": {}
             },
+            "eight_siblings_Kq7RmX": {
+              "type": "eight-siblings",
+              "settings": {
+                "heading": "Colore",
+                "swatch_size": 48,
+                "swatch_ratio": "3 / 4",
+                "padding-block-start": 0,
+                "padding-block-end": 8
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -381,6 +392,7 @@
             "text_9WaLn7",
             "price_a7krng",
             "divider_HrJgFt",
+            "eight_siblings_Kq7RmX",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "accordion_NKWPiW",
