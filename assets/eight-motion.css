@@ -124,11 +124,15 @@
 
 /* 6. Product page: sticky header steps aside past the product information
       (class toggled by assets/eight-product-header.js) */
-.header-section:has(> #header-component[sticky]) {
-  transition: transform var(--eight-duration-hover) var(--eight-ease-reveal);
+/* Animated on the header itself: its .header-section wrapper can have zero height,
+   which would make a percentage translate resolve to nothing. */
+#header-component[sticky] {
+  transition:
+    opacity var(--animation-speed) var(--animation-easing),
+    transform var(--eight-duration-hover) var(--eight-ease-reveal);
 }
 
-.eight-header-hidden .header-section:has(> #header-component[sticky]):not(:focus-within) {
+.eight-header-hidden #header-component[sticky]:not(:focus-within) {
   transform: translateY(calc(-100% - 2px));
   pointer-events: none;
 }
@@ -143,7 +147,7 @@
 
   :is(.button, .button-secondary)::before,
   .card-gallery slideshow-slide img,
-  .header-section:has(> #header-component[sticky]) {
+  #header-component[sticky] {
     transition: none;
   }
 }
