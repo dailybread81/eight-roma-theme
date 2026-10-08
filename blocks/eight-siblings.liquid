@@ -27,6 +27,8 @@
   assign current_label = current_color.label.value
 -%}
 
+{%- assign dbg_mf = product_resource.metafields.shopify['color-pattern'] -%}
+<!-- eight-debug type={{ dbg_mf.type }} size={{ dbg_mf.value.size }} first={{ dbg_mf.value.first.label }} firstval={{ dbg_mf.value.first.label.value }} color={{ dbg_mf.value.first.color.value }} sys={{ dbg_mf.value.first.system.type }} raw={{ dbg_mf }} dot={{ product_resource.metafields.shopify.color-pattern.value.first.label.value }} -->
 {%- if total > 1 -%}
   {%- assign label_id = 'EightSiblings-' | append: block.id -%}
   <div
