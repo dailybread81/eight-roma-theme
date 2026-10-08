@@ -99,7 +99,7 @@
                   "name": "t:names.menu",
                   "settings": {
                     "menu": "brand",
-                    "heading": "About",
+                    "heading": "Info",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
                     "accordion_icon": "caret",
@@ -234,6 +234,7 @@
                   "type": "email-signup",
                   "name": "t:names.email_signup",
                   "settings": {
+                    "tags": "",
                     "width": "fill",
                     "custom_width": 100,
                     "heading": "",
@@ -314,7 +315,7 @@
         "copyright": {
           "type": "footer-copyright",
           "settings": {
-            "copyright_text": "",
+            "copyright_text": "Black Cloth Srls Via Euripide 8 00125 Roma P.IVA 16354831006",
             "show_year": true,
             "show_powered_by": false,
             "text_color": "",
