@@ -149,26 +149,39 @@
     "stores": {
       "type": "eight-store-locator",
       "blocks": {
+        "store_gambero": {
+          "type": "store",
+          "settings": {
+            "name": "Eight Store — Via del Gambero",
+            "address": "Via del Gambero 34\n00187 Roma (RM)",
+            "map_query": "Eight Store, Via del Gambero 34, 00187 Roma",
+            "hours": "<p>Tutti i giorni 11:00–19:30</p>",
+            "phone": "06 2296 5951",
+            "email": "info@eight-roma.it",
+            "directions_label": "Indicazioni"
+          }
+        },
         "store_euripide": {
           "type": "store",
           "settings": {
-            "name": "Eight Roma — Studio",
+            "name": "Eight — Via Euripide",
             "address": "Via Euripide 4\n00125 Roma (RM)",
-            "map_query": "Via Euripide 4, 00125 Roma",
-            "hours": "",
-            "phone": "+39 06 8854 9080",
+            "map_query": "Eight, Via Euripide 4, 00125 Roma",
+            "hours": "<p>Lunedì–sabato 9:30–13:00, 16:00–19:30<br>Domenica chiuso</p>",
+            "phone": "06 2296 5951",
             "email": "info@eight-roma.it",
             "directions_label": "Indicazioni"
           }
         }
       },
       "block_order": [
+        "store_gambero",
         "store_euripide"
       ],
       "settings": {
         "heading": "Dove trovarci",
         "heading_preset": "h3",
-        "text": "<p>Il nostro studio a Roma, dove disegniamo e realizziamo ogni capo.</p>",
+        "text": "<p>I nostri negozi a Roma.</p>",
         "show_map": true,
         "map_height": 480,
         "map_zoom": 15,
