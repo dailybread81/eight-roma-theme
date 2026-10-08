@@ -45,7 +45,6 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
-        "background_color": "#000000",
         "padding-block-start": 100,
         "padding-block-end": 96
       }
@@ -129,7 +128,6 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
-        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -213,7 +211,6 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
-        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -297,7 +294,6 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
-        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -393,7 +389,6 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
-        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -477,7 +472,6 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
-        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -561,7 +555,6 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
-        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -600,7 +593,6 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 32,
         "section_width": "page-width",
-        "background_color": "#000000",
         "padding-block-start": 100,
         "padding-block-end": 100
       }

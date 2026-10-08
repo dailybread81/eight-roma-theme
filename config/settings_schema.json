@@ -87,21 +87,39 @@
         "id": "eight_home_header_color",
         "label": "t:settings.eight_home_header_color",
         "default": "#F4CEAB",
-        "visible_if": "{{ settings.eight_home_colors_enabled }}"
+        "visible_if": "{{ settings.eight_home_colors_enabled or settings.eight_about_colors_enabled }}"
       },
       {
         "type": "color",
         "id": "eight_home_dropdown_color",
         "label": "t:settings.eight_home_dropdown_color",
         "default": "#F4CEAB",
-        "visible_if": "{{ settings.eight_home_colors_enabled }}"
+        "visible_if": "{{ settings.eight_home_colors_enabled or settings.eight_about_colors_enabled }}"
       },
       {
         "type": "color",
         "id": "eight_home_footer_color",
         "label": "t:settings.eight_home_footer_color",
         "default": "#F4CEAB",
-        "visible_if": "{{ settings.eight_home_colors_enabled }}"
+        "visible_if": "{{ settings.eight_home_colors_enabled or settings.eight_about_colors_enabled }}"
+      },
+      {
+        "type": "header",
+        "content": "t:content.eight_about_colors"
+      },
+      {
+        "type": "checkbox",
+        "id": "eight_about_colors_enabled",
+        "label": "t:settings.eight_about_colors_enabled",
+        "info": "t:info.eight_about_colors",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "eight_about_background_color",
+        "label": "t:settings.eight_about_background_color",
+        "default": "#F4CEAB",
+        "visible_if": "{{ settings.eight_about_colors_enabled }}"
       }
     ]
   },

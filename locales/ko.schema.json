@@ -176,6 +176,8 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "eight_about_colors_enabled": "Tint the whole About page",
+    "eight_about_background_color": "Section background",
     "eight_store_show_map": "Show map",
     "eight_store_map_zoom": "Map zoom",
     "eight_store_consent_text": "Text before the map loads",
@@ -896,6 +898,7 @@
     "direction_top_start": "왼쪽 상단"
   },
   "content": {
+    "eight_about_colors": "About page",
     "eight_store_map": "Map",
     "background_video": "배경 비디오",
     "describe_the_video_for": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1120,6 +1123,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "eight_about_colors": "Uses the header, dropdown and footer colors above, plus the section background below.",
     "eight_store_map_query": "Optional. Text used to find the store on Google Maps, e.g. \"Eight Roma, Via Euripide 4, Roma\". Defaults to the address.",
     "eight_size_guide": "Opens the page set in the product's Size chart metafield (theme.size_chart) in a side drawer. Hidden on products without a size guide.",
     "eight_copyright_text": "Shown after the © symbol. Leave empty to use the store name linked to the homepage. Example: Eight Roma S.r.l. – VAT 01234567890",
