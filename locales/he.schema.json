@@ -217,6 +217,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "eight_signup_tags": "Comma-separated tags added to new sign-ups. On product pages the product handle is added too, e.g. \"coming-soon, wool-duffel-bag\".",
     "eight_about_background_color": "Leave empty to use the header color, so the whole page is one tint.",
     "eight_about_colors": "Uses the header, dropdown and footer colors above, plus the section background below.",
     "eight_store_map_query": "Optional. Text used to find the store on Google Maps, e.g. \"Eight Roma, Via Euripide 4, Roma\". Defaults to the address.",
@@ -704,6 +705,7 @@
     "direction_top_start": "למעלה, התחלה"
   },
   "settings": {
+    "eight_signup_tags": "Customer tags",
     "eight_about_colors_enabled": "Tint the whole About page",
     "eight_about_background_color": "Section background",
     "eight_store_show_map": "Show map",

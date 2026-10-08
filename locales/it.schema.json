@@ -176,6 +176,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "eight_signup_tags": "Tag cliente",
     "eight_about_colors_enabled": "Pagina About tutta in tinta",
     "eight_about_background_color": "Sfondo sezioni",
     "eight_store_show_map": "Mostra mappa",
@@ -1123,6 +1124,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_signup_tags": "Tag separati da virgola aggiunti ai nuovi iscritti. Nelle pagine prodotto viene aggiunto anche l'handle del prodotto, es. \"coming-soon, borsone-in-lana\".",
     "eight_about_background_color": "Lascia vuoto per usare il colore dell'header, così tutta la pagina ha una sola tinta.",
     "eight_about_colors": "Usa i colori di header, menu a tendina e footer qui sopra, più lo sfondo delle sezioni qui sotto.",
     "eight_store_map_query": "Facoltativo. Testo usato per trovare il negozio su Google Maps, es. \"Eight Roma, Via Euripide 4, Roma\". Se vuoto usa l'indirizzo.",
