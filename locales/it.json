@@ -166,7 +166,6 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Spese di spedizione</a> calcolate al check-out.",
     "taxes_included": "Imposte incluse.",
     "product_badge_sold_out": "Esaurito",
-    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "In offerta",
     "search_input_label": "Ricerca",
     "search_input_placeholder": "Ricerca",
