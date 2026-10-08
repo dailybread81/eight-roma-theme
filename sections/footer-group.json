@@ -94,12 +94,12 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "menu_c8xFGC": {
+                "menu_H4cHLN": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
                     "menu": "brand",
-                    "heading": "Brand",
+                    "heading": "About",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
                     "accordion_icon": "caret",
@@ -107,7 +107,7 @@
                     "background_color": "",
                     "text_color": "",
                     "heading_preset": "h4",
-                    "link_preset": "paragraph",
+                    "link_preset": "h5",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -115,7 +115,7 @@
                   },
                   "blocks": {}
                 },
-                "menu_H4cHLN": {
+                "menu_8MnrXm": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
@@ -159,8 +159,8 @@
                 }
               },
               "block_order": [
-                "menu_c8xFGC",
                 "menu_H4cHLN",
+                "menu_8MnrXm",
                 "menu_zf63TX"
               ]
             },
