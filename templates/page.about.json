@@ -1,0 +1,619 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "intro": {
+      "type": "section",
+      "blocks": {
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "<p>EIGHT ROMA</p>",
+            "type_preset": "h6",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center"
+          },
+          "blocks": {}
+        },
+        "title": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Story</h1>",
+            "type_preset": "h1",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "caption",
+        "title"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "background_color": "#000000",
+        "padding-block-start": 120,
+        "padding-block-end": 96
+      }
+    },
+    "chapter_1": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>THE BEGINNING</p>",
+                "type_preset": "h6",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "settings": {
+                "height": "fit"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Eight</h2>",
+                    "type_preset": "h2",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Tutto è iniziato da un’esigenza: sentirsi rappresentati da ciò che si indossa. Eight nasce così, da un capo creato per sé stessi quando nessun brand parlava davvero la nostra lingua. Un capo che raccontava una storia, che faceva sentire a casa e forti, con le cuciture a vista come cicatrici da mostrare con orgoglio.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading",
+                "text"
+              ]
+            }
+          },
+          "block_order": [
+            "caption",
+            "group"
+          ]
+        }
+      },
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "80svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "background_color": "#000000",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "chapter_2": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>HISTORY</p>",
+                "type_preset": "h6",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "settings": {
+                "height": "fit"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Our roots</h2>",
+                    "type_preset": "h2",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>La madre insegnava taglio e confezione, le mani imparavano a creare, il nero era l’unico colore che sembrava proteggere. Ma un giorno, le persone hanno iniziato a chiedere: “Lo posso avere anche io?”. Quello è stato il momento in cui la passione è diventata Eight: un progetto condiviso, prima tra fratelli, poi con chi cercava un modo diverso di esprimersi.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading",
+                "text"
+              ]
+            }
+          },
+          "block_order": [
+            "caption",
+            "group"
+          ]
+        }
+      },
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "80svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "background_color": "#000000",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "chapter_3": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>VISION</p>",
+                "type_preset": "h6",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "settings": {
+                "height": "fit"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Values<br>Style<br>Strength</h2>",
+                    "type_preset": "h2",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Eight nasce dalla strada, ma con la cura della sartoria. Vogliamo che ogni capo sia un manifesto di libertà, che un oversize colorato dia la stessa sicurezza di un total black, che un tessuto pregiato sia complice dei tuoi movimenti, non un ostacolo. Il nostro stile è urbano ma raffinato, essenziale ma a tratti eccentrico, sempre fedele alla personalità di chi lo indossa.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading",
+                "text"
+              ]
+            }
+          },
+          "block_order": [
+            "caption",
+            "group"
+          ]
+        }
+      },
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "80svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "background_color": "#000000",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "chapter_4": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>MISSION</p>",
+                "type_preset": "h6",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "settings": {
+                "height": "fit"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>The way<br>we move</h2>",
+                    "type_preset": "h2",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Vogliamo che chi indossa Eight si senta bene, forte, a proprio agio. Non creiamo abiti per le passerelle, ma per la vita reale: per le strade delle capitali, per le serate tra amici, per le giornate in cui vuoi sentirti invincibile. Crediamo che la moda debba essere uno spazio di libertà: per questo ogni nostro capo porta con sé un messaggio semplice:</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "claim": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p><strong>Sentitevi liberi di indossare<br>ciò che vi fa sentire vivi.</strong></p>",
+                    "type_preset": "h4",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading",
+                "text",
+                "claim"
+              ]
+            }
+          },
+          "block_order": [
+            "caption",
+            "group"
+          ]
+        }
+      },
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "80svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "background_color": "#000000",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "chapter_5": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>CRAFT</p>",
+                "type_preset": "h6",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "settings": {
+                "height": "fit"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>How<br>we create</h2>",
+                    "type_preset": "h2",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Ogni capo prende forma nel nostro studio a Roma, dove disegniamo, tagliamo, confezioniamo e sdifettiamo con carta, matita e passione. Usiamo fibre naturali e tessuti pregiati, senza rinunciare a materiali tecnici quando servono a migliorare la vestibilità e la resa. La nostra produzione è artigianale, sostenibile, consapevole, con lo sguardo rivolto all’innovazione senza dimenticare le radici.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading",
+                "text"
+              ]
+            }
+          },
+          "block_order": [
+            "caption",
+            "group"
+          ]
+        }
+      },
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "80svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "background_color": "#000000",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "chapter_6": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32
+          },
+          "blocks": {
+            "caption": {
+              "type": "text",
+              "settings": {
+                "text": "<p>FUTURE</p>",
+                "type_preset": "h6",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "settings": {
+                "height": "fit"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Next<br>moves</h2>",
+                    "type_preset": "h2",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Eight è pronto a percorrere nuove strade, ad approdare nelle capitali mondiali, a collaborare con chi condivide la nostra visione di autenticità, qualità e libertà. Il futuro? Non lo sappiamo con precisione. Ma sappiamo che continueremo a osare e a creare, perché ogni capo possa raccontare una storia, la tua.</p>",
+                    "type_preset": "rte",
+                    "width": "100%",
+                    "max_width": "narrow",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "heading",
+                "text"
+              ]
+            }
+          },
+          "block_order": [
+            "caption",
+            "group"
+          ]
+        }
+      },
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "80svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "background_color": "#000000",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "closing": {
+      "type": "section",
+      "blocks": {
+        "claim": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Sentitevi liberi di indossare ciò che vi fa sentire vivi.</h2>",
+            "type_preset": "h3",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center"
+          },
+          "blocks": {}
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "label": "Scopri la collezione",
+            "link": "shopify://collections/all",
+            "style_class": "button-secondary"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "claim",
+        "button"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "background_color": "#000000",
+        "padding-block-start": 120,
+        "padding-block-end": 120
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "chapter_1",
+    "chapter_2",
+    "chapter_3",
+    "chapter_4",
+    "chapter_5",
+    "chapter_6",
+    "closing"
+  ]
+}
