@@ -16,10 +16,24 @@
           "type": "text",
           "settings": {
             "text": "<p>EIGHT ROMA</p>",
-            "type_preset": "h6",
             "width": "100%",
             "max_width": "normal",
-            "alignment": "center"
+            "alignment": "center",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -27,10 +41,24 @@
           "type": "text",
           "settings": {
             "text": "<h1>Story</h1>",
-            "type_preset": "h1",
             "width": "100%",
             "max_width": "normal",
-            "alignment": "center"
+            "alignment": "center",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         }
@@ -41,10 +69,29 @@
       ],
       "settings": {
         "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "#000000",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
         "padding-block-start": 100,
         "padding-block-end": 96
       }
@@ -57,7 +104,12 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image_position": "cover"
+            "image": "shopify://shop_images/homeslide01_c0018437-7050-4521-b07d-8490bd58ee86.jpg",
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
           },
           "blocks": {}
         },
@@ -74,27 +126,88 @@
               "type": "text",
               "settings": {
                 "text": "<p>THE BEGINNING</p>",
-                "type_preset": "h6",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "group": {
               "type": "group",
               "settings": {
-                "height": "fit"
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "heading": {
                   "type": "text",
                   "settings": {
                     "text": "<h2>Eight</h2>",
-                    "type_preset": "h2",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -102,10 +215,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Tutto è iniziato da un’esigenza: sentirsi rappresentati da ciò che si indossa. Eight nasce così, da un capo creato per sé stessi quando nessun brand parlava davvero la nostra lingua. Un capo che raccontava una storia, che faceva sentire a casa e forti, con le cuciture a vista come cicatrici da mostrare con orgoglio.</p>",
-                    "type_preset": "rte",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
@@ -128,6 +255,7 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
+        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -139,8 +267,14 @@
           "type": "_media-without-appearance",
           "static": true,
           "settings": {
-            "media_type": "image",
-            "image_position": "cover"
+            "media_type": "video",
+            "image": "shopify://shop_images/DSCF90753.jpg",
+            "link": "",
+            "video": "shopify://files/videos/Sequenza 06_1.mp4",
+            "video_loop": true,
+            "video_autoplay": true,
+            "image_position": "cover",
+            "video_position": "cover"
           },
           "blocks": {}
         },
@@ -157,27 +291,88 @@
               "type": "text",
               "settings": {
                 "text": "<p>HISTORY</p>",
-                "type_preset": "h6",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "group": {
               "type": "group",
               "settings": {
-                "height": "fit"
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "heading": {
                   "type": "text",
                   "settings": {
                     "text": "<h2>Our roots</h2>",
-                    "type_preset": "h2",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -185,10 +380,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>La madre insegnava taglio e confezione, le mani imparavano a creare, il nero era l’unico colore che sembrava proteggere. Ma un giorno, le persone hanno iniziato a chiedere: “Lo posso avere anche io?”. Quello è stato il momento in cui la passione è diventata Eight: un progetto condiviso, prima tra fratelli, poi con chi cercava un modo diverso di esprimersi.</p>",
-                    "type_preset": "rte",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
@@ -211,6 +420,7 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
+        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -223,7 +433,12 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image_position": "cover"
+            "image": "shopify://shop_images/DSCF1927.jpg",
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
           },
           "blocks": {}
         },
@@ -240,27 +455,88 @@
               "type": "text",
               "settings": {
                 "text": "<p>VISION</p>",
-                "type_preset": "h6",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "group": {
               "type": "group",
               "settings": {
-                "height": "fit"
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "heading": {
                   "type": "text",
                   "settings": {
                     "text": "<h2>Values<br>Style<br>Strength</h2>",
-                    "type_preset": "h2",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -268,10 +544,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Eight nasce dalla strada, ma con la cura della sartoria. Vogliamo che ogni capo sia un manifesto di libertà, che un oversize colorato dia la stessa sicurezza di un total black, che un tessuto pregiato sia complice dei tuoi movimenti, non un ostacolo. Il nostro stile è urbano ma raffinato, essenziale ma a tratti eccentrico, sempre fedele alla personalità di chi lo indossa.</p>",
-                    "type_preset": "rte",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
@@ -294,6 +584,7 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
+        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -305,8 +596,12 @@
           "type": "_media-without-appearance",
           "static": true,
           "settings": {
-            "media_type": "image",
-            "image_position": "cover"
+            "media_type": "video",
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
           },
           "blocks": {}
         },
@@ -323,27 +618,88 @@
               "type": "text",
               "settings": {
                 "text": "<p>MISSION</p>",
-                "type_preset": "h6",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "group": {
               "type": "group",
               "settings": {
-                "height": "fit"
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "heading": {
                   "type": "text",
                   "settings": {
                     "text": "<h2>The way<br>we move</h2>",
-                    "type_preset": "h2",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -351,10 +707,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Vogliamo che chi indossa Eight si senta bene, forte, a proprio agio. Non creiamo abiti per le passerelle, ma per la vita reale: per le strade delle capitali, per le serate tra amici, per le giornate in cui vuoi sentirti invincibile. Crediamo che la moda debba essere uno spazio di libertà: per questo ogni nostro capo porta con sé un messaggio semplice:</p>",
-                    "type_preset": "rte",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -362,10 +732,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p><strong>Sentitevi liberi di indossare<br>ciò che vi fa sentire vivi.</strong></p>",
-                    "type_preset": "h4",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h4",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
@@ -389,6 +773,7 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
+        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -401,7 +786,11 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image_position": "cover"
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
           },
           "blocks": {}
         },
@@ -418,27 +807,88 @@
               "type": "text",
               "settings": {
                 "text": "<p>CRAFT</p>",
-                "type_preset": "h6",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "group": {
               "type": "group",
               "settings": {
-                "height": "fit"
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "heading": {
                   "type": "text",
                   "settings": {
                     "text": "<h2>How<br>we create</h2>",
-                    "type_preset": "h2",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -446,10 +896,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Ogni capo prende forma nel nostro studio a Roma, dove disegniamo, tagliamo, confezioniamo e sdifettiamo con carta, matita e passione. Usiamo fibre naturali e tessuti pregiati, senza rinunciare a materiali tecnici quando servono a migliorare la vestibilità e la resa. La nostra produzione è artigianale, sostenibile, consapevole, con lo sguardo rivolto all’innovazione senza dimenticare le radici.</p>",
-                    "type_preset": "rte",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
@@ -472,6 +936,7 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
+        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -484,7 +949,11 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image_position": "cover"
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
           },
           "blocks": {}
         },
@@ -501,27 +970,88 @@
               "type": "text",
               "settings": {
                 "text": "<p>FUTURE</p>",
-                "type_preset": "h6",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left"
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
             "group": {
               "type": "group",
               "settings": {
-                "height": "fit"
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "heading": {
                   "type": "text",
                   "settings": {
                     "text": "<h2>Next<br>moves</h2>",
-                    "type_preset": "h2",
                     "width": "100%",
                     "max_width": "normal",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -529,10 +1059,24 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Eight è pronto a percorrere nuove strade, ad approdare nelle capitali mondiali, a collaborare con chi condivide la nostra visione di autenticità, qualità e libertà. Il futuro? Non lo sappiamo con precisione. Ma sappiamo che continueremo a osare e a creare, perché ogni capo possa raccontare una storia, la tua.</p>",
-                    "type_preset": "rte",
                     "width": "100%",
                     "max_width": "narrow",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
@@ -555,6 +1099,7 @@
         "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
+        "background_color": "#000000",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -566,10 +1111,24 @@
           "type": "text",
           "settings": {
             "text": "<h2>Sentitevi liberi di indossare ciò che vi fa sentire vivi.</h2>",
-            "type_preset": "h3",
             "width": "100%",
             "max_width": "narrow",
-            "alignment": "center"
+            "alignment": "center",
+            "type_preset": "h3",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -578,7 +1137,16 @@
           "settings": {
             "label": "Scopri la collezione",
             "link": "shopify://collections/all",
-            "style_class": "button-secondary"
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
           },
           "blocks": {}
         }
@@ -589,10 +1157,29 @@
       ],
       "settings": {
         "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 32,
         "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "#000000",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
         "padding-block-start": 100,
         "padding-block-end": 100
       }
