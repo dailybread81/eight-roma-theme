@@ -315,7 +315,7 @@
         "copyright": {
           "type": "footer-copyright",
           "settings": {
-            "copyright_text": "Black Cloth Srls Via Euripide 8 00125 Roma P.IVA 16354831006",
+            "copyright_text": "Black Cloth Srls Via Euripide 8 00125 Roma P.IVA 16354831006 <a href=\"https://www.matteobastioni.com\" target=\"_blank\" title=\"https://www.matteobastioni.com\">MBAD</a>",
             "show_year": true,
             "show_powered_by": false,
             "text_color": "",
