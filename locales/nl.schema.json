@@ -173,6 +173,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "eight_copyright_text": "Copyright text",
+    "eight_copyright_show_year": "Show current year",
     "eight_siblings_heading": "Heading",
     "eight_siblings_swatch_size": "Swatch width",
     "eight_siblings_swatch_ratio": "Swatch shape",
@@ -1102,6 +1104,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "eight_copyright_text": "Shown after the © symbol. Leave empty to use the store name linked to the homepage. Example: Eight Roma S.r.l. – VAT 01234567890",
     "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",
     "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "carousel_layout_on_mobile": "Op mobiel wordt altijd een carrousel gebruikt",

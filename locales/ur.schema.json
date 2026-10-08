@@ -215,6 +215,7 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "eight_copyright_text": "Shown after the © symbol. Leave empty to use the store name linked to the homepage. Example: Eight Roma S.r.l. – VAT 01234567890",
     "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",
     "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "actions_display_style": "موبائل پر ہمیشہ آئیکن استعمال ہوتے ہیں",
@@ -694,6 +695,8 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "eight_copyright_text": "Copyright text",
+    "eight_copyright_show_year": "Show current year",
     "eight_siblings_heading": "Heading",
     "eight_siblings_swatch_size": "Swatch width",
     "eight_siblings_swatch_ratio": "Swatch shape",
