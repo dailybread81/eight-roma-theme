@@ -267,7 +267,7 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "felpe",
+          "hoodies",
           "camicie",
           "t-shirts"
         ],
@@ -426,7 +426,7 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "borse",
+          "bags",
           "sciarpe"
         ],
         "layout_type": "grid",
