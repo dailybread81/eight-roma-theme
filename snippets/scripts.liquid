@@ -311,3 +311,20 @@
     },
   };
 </script>
+
+{%- comment -%} Eight Roma motion layer: early flag avoids a flash of revealed content; it is removed if the module never loads. {%- endcomment -%}
+{%- unless request.design_mode -%}
+  <script>
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      document.documentElement.classList.add('eight-motion');
+      setTimeout(function () {
+        if (!window.eightMotionReady) document.documentElement.classList.remove('eight-motion');
+      }, 4000);
+    }
+  </script>
+{%- endunless -%}
+<script
+  src="{{ 'eight-motion.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
