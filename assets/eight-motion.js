@@ -18,6 +18,25 @@ const designMode = Boolean(window.Shopify && window.Shopify.designMode);
 let observer;
 
 /**
+ * Reveal targets keyed by the element that is actually observed. Headings are
+ * clipped while hidden, and Chrome measures intersection on the clipped area, so a
+ * hidden heading never "enters" the viewport: their unclipped parent is watched instead.
+ * @type {Map<Element, Set<HTMLElement>>}
+ */
+const targetsByWatched = new Map();
+
+/**
+ * @param {HTMLElement} target
+ * @param {Element} watched
+ */
+function watch(target, watched) {
+  const targets = targetsByWatched.get(watched) ?? new Set();
+  targets.add(target);
+  targetsByWatched.set(watched, targets);
+  observer?.observe(watched);
+}
+
+/**
  * Tags new reveal targets under `root` and starts observing them.
  * @param {ParentNode} root
  */
@@ -32,7 +51,7 @@ function setup(root = document) {
 
       element.dataset.eightReveal = type;
       if (type === 'text') element.style.setProperty('--eight-delay', `${(index % 3) * 0.12}s`);
-      observer.observe(element);
+      watch(element, type === 'text' ? element.parentElement ?? element : element);
     });
   }
 }
@@ -44,11 +63,12 @@ if (reducedMotion || designMode || !('IntersectionObserver' in window)) {
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        entry.target.classList.add('is-revealed');
+        for (const target of targetsByWatched.get(entry.target) ?? []) target.classList.add('is-revealed');
+        targetsByWatched.delete(entry.target);
         observer?.unobserve(entry.target);
       }
     },
-    { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+    { rootMargin: '0px 0px -10% 0px', threshold: 0 }
   );
 
   document.documentElement.classList.add('eight-motion');
