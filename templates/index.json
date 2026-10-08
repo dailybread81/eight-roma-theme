@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Realizziamo articoli che funzionano meglio e durano più a lungo. I nostri prodotti risolvono problemi reali con un design pulito e materiali autentici.</p>",
+            "text": "<p>Eight nasce dalla strada, ma con la cura della sartoria. Vogliamo che ogni capo sia un manifesto di libertà, che un oversize colorato dia la stessa sicurezza di un total black, che un tessuto pregiato sia complice dei tuoi movimenti, non un ostacolo.</p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
@@ -71,7 +71,7 @@
       ],
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/8-610260959-QP-shoes.jpg",
+        "image_1": "shopify://shop_images/8-610260917-expcc.jpg",
         "media_type_2": "image",
         "image_2": "shopify://shop_images/8-610260871-QP-shoes.jpg",
         "stack_media_on_mobile": true,
@@ -295,7 +295,7 @@
         "text_69C6UJ": {
           "type": "text",
           "settings": {
-            "text": "<h2>Premium materials and<br/>hand-selected finishing touches</h2>",
+            "text": "<h2>II nostro stile è urbano ma affinato, essenziale ma a tratti eccentrico, sempre fedele alla personalità di chi lo indossa.</h2>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
@@ -316,40 +316,15 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "text_hzq6cM": {
-          "type": "text",
-          "settings": {
-            "text": "<p><a href=\"/collections/all\" title=\"All products\">Shop now</a></p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "right",
-            "type_preset": "h6",
-            "font": "var(--font-subheading--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "uppercase",
-            "wrap": "nowrap",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "text_69C6UJ",
-        "text_hzq6cM"
+        "text_69C6UJ"
       ],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/8-610260961-exp-cc.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
