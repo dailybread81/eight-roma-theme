@@ -122,6 +122,17 @@
   }
 }
 
+/* 6. Product page: sticky header steps aside past the product information
+      (class toggled by assets/eight-product-header.js) */
+.header-section:has(> #header-component[sticky]) {
+  transition: transform var(--eight-duration-hover) var(--eight-ease-reveal);
+}
+
+.eight-header-hidden .header-section:has(> #header-component[sticky]):not(:focus-within) {
+  transform: translateY(calc(-100% - 2px));
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .eight-motion #MainContent :is(.image-block, .hero__media-grid) :is(img, video),
   .eight-motion #MainContent .text-block:is(.h1, .h2, .h3) {
@@ -131,7 +142,8 @@
   }
 
   :is(.button, .button-secondary)::before,
-  .card-gallery slideshow-slide img {
+  .card-gallery slideshow-slide img,
+  .header-section:has(> #header-component[sticky]) {
     transition: none;
   }
 }

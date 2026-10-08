@@ -328,3 +328,10 @@
   type="module"
   fetchpriority="low"
 ></script>
+{%- if template.name == 'product' -%}
+  <script
+    src="{{ 'eight-product-header.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+{%- endif -%}
