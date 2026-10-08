@@ -132,7 +132,7 @@
             "eight_siblings_Kq7RmX": {
               "type": "eight-siblings",
               "settings": {
-                "heading": "Colore",
+                "heading": "Colour",
                 "swatch_size": 24,
                 "swatch_ratio": "1",
                 "padding-block-start": 0,
@@ -143,7 +143,7 @@
             "eight_size_guide_Lp4Tw9": {
               "type": "eight-size-guide",
               "settings": {
-                "label": "Guida taglie",
+                "label": "Size guide",
                 "padding-block-start": 4,
                 "padding-block-end": 8
               },

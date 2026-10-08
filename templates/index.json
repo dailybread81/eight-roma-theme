@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Eight nasce dalla strada, ma con la cura della sartoria. Vogliamo che ogni capo sia un manifesto di libertà, che un oversize colorato dia la stessa sicurezza di un total black, che un tessuto pregiato sia complice dei tuoi movimenti, non un ostacolo.</p>",
+            "text": "<p>Eight comes from the street, with the care of a tailor’s workshop. We want every piece to be a manifesto of freedom: a colourful oversized fit should give the same confidence as total black, and a fine fabric should move with you, never hold you back.</p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
@@ -295,7 +295,7 @@
         "text_69C6UJ": {
           "type": "text",
           "settings": {
-            "text": "<h2>II nostro stile è urbano ma affinato, essenziale ma a tratti eccentrico, sempre fedele alla personalità di chi lo indossa.</h2>",
+            "text": "<h2>Our style is urban yet refined, essential yet at times eccentric, always true to the personality of whoever wears it.</h2>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",

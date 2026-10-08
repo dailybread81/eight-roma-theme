@@ -188,7 +188,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Tutto è iniziato da un’esigenza: sentirsi rappresentati da ciò che si indossa. Eight nasce così, da un capo creato per sé stessi quando nessun brand parlava davvero la nostra lingua. Un capo che raccontava una storia, che faceva sentire a casa e forti, con le cuciture a vista come cicatrici da mostrare con orgoglio.</p>",
+                    "text": "<p>It all started with a need: to feel represented by what we wear. That is how Eight was born, from a garment made for ourselves when no brand truly spoke our language. A garment that told a story, that made us feel at home and strong, with exposed seams worn like scars, proudly on show.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -353,7 +353,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>La madre insegnava taglio e confezione, le mani imparavano a creare, il nero era l’unico colore che sembrava proteggere. Ma un giorno, le persone hanno iniziato a chiedere: “Lo posso avere anche io?”. Quello è stato il momento in cui la passione è diventata Eight: un progetto condiviso, prima tra fratelli, poi con chi cercava un modo diverso di esprimersi.</p>",
+                    "text": "<p>Our mother taught pattern cutting and tailoring, our hands learned to create, and black was the only colour that seemed to protect. Then one day people started asking: “Can I have one too?”. That was the moment the passion became Eight: a shared project, first between brothers, then with everyone looking for a different way to express themselves.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -517,7 +517,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Eight nasce dalla strada, ma con la cura della sartoria. Vogliamo che ogni capo sia un manifesto di libertà, che un oversize colorato dia la stessa sicurezza di un total black, che un tessuto pregiato sia complice dei tuoi movimenti, non un ostacolo. Il nostro stile è urbano ma raffinato, essenziale ma a tratti eccentrico, sempre fedele alla personalità di chi lo indossa.</p>",
+                    "text": "<p>Eight comes from the street, with the care of a tailor’s workshop. We want every piece to be a manifesto of freedom: a colourful oversized fit should give the same confidence as total black, and a fine fabric should move with you, never hold you back. Our style is urban yet refined, essential yet at times eccentric, always true to the personality of whoever wears it.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -682,7 +682,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Vogliamo che chi indossa Eight si senta bene, forte, a proprio agio. Non creiamo abiti per le passerelle, ma per la vita reale: per le strade delle capitali, per le serate tra amici, per le giornate in cui vuoi sentirti invincibile. Crediamo che la moda debba essere uno spazio di libertà: per questo ogni nostro capo porta con sé un messaggio semplice:</p>",
+                    "text": "<p>We want whoever wears Eight to feel good, strong and at ease. We don’t make clothes for the runway, but for real life: for the streets of capital cities, for evenings with friends, for the days when you want to feel invincible. We believe fashion should be a space of freedom, which is why every piece we make carries a simple message:</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -847,7 +847,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Ogni capo prende forma nel nostro studio a Roma, dove disegniamo, tagliamo, confezioniamo e sdifettiamo con carta, matita e passione. Usiamo fibre naturali e tessuti pregiati, senza rinunciare a materiali tecnici quando servono a migliorare la vestibilità e la resa. La nostra produzione è artigianale, sostenibile, consapevole, con lo sguardo rivolto all’innovazione senza dimenticare le radici.</p>",
+                    "text": "<p>Every piece takes shape in our studio in Rome, where we design, cut, sew and finish with paper, pencil and passion. We use natural fibres and fine fabrics, and turn to technical materials when they improve fit and performance. Our production is artisanal, sustainable and considered, looking towards innovation without forgetting our roots.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1010,7 +1010,7 @@
                 "text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Eight è pronto a percorrere nuove strade, ad approdare nelle capitali mondiali, a collaborare con chi condivide la nostra visione di autenticità, qualità e libertà. Il futuro? Non lo sappiamo con precisione. Ma sappiamo che continueremo a osare e a creare, perché ogni capo possa raccontare una storia, la tua.</p>",
+                    "text": "<p>Eight is ready to take new roads, to land in the world’s capitals, to work with those who share our vision of authenticity, quality and freedom. The future? We can’t say exactly. But we know we will keep daring and creating, so that every piece can tell a story: yours.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1063,7 +1063,7 @@
         "claim": {
           "type": "text",
           "settings": {
-            "text": "<h2>Sentitevi liberi di indossare ciò che vi fa sentire vivi.</h2>",
+            "text": "<h2>Feel free to wear what makes you feel alive.</h2>",
             "width": "100%",
             "max_width": "narrow",
             "alignment": "center",
@@ -1088,7 +1088,7 @@
         "button": {
           "type": "button",
           "settings": {
-            "label": "Scopri la collezione",
+            "label": "Discover the collection",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
