@@ -1123,6 +1123,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_about_background_color": "Lascia vuoto per usare il colore dell'header, così tutta la pagina ha una sola tinta.",
     "eight_about_colors": "Usa i colori di header, menu a tendina e footer qui sopra, più lo sfondo delle sezioni qui sotto.",
     "eight_store_map_query": "Facoltativo. Testo usato per trovare il negozio su Google Maps, es. \"Eight Roma, Via Euripide 4, Roma\". Se vuoto usa l'indirizzo.",
     "eight_size_guide": "Apre in un pannello laterale la pagina indicata nel metafield prodotto Size chart (theme.size_chart). Non compare sui prodotti senza guida.",

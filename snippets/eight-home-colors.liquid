@@ -23,7 +23,7 @@
     assign dropdown_color = settings.eight_home_dropdown_color
     assign page_color = blank
     if tint_scope == 'about'
-      assign page_color = settings.eight_about_background_color
+      assign page_color = settings.eight_about_background_color | default: header_color
     endif
   -%}
   {%- if header_color != blank or dropdown_color != blank or page_color != blank -%}

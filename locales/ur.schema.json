@@ -217,6 +217,7 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "eight_about_background_color": "Leave empty to use the header color, so the whole page is one tint.",
     "eight_about_colors": "Uses the header, dropdown and footer colors above, plus the section background below.",
     "eight_store_map_query": "Optional. Text used to find the store on Google Maps, e.g. \"Eight Roma, Via Euripide 4, Roma\". Defaults to the address.",
     "eight_size_guide": "Opens the page set in the product's Size chart metafield (theme.size_chart) in a side drawer. Hidden on products without a size guide.",

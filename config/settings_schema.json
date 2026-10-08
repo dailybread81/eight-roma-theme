@@ -118,8 +118,8 @@
         "type": "color",
         "id": "eight_about_background_color",
         "label": "t:settings.eight_about_background_color",
-        "default": "#F4CEAB",
-        "visible_if": "{{ settings.eight_about_colors_enabled }}"
+        "visible_if": "{{ settings.eight_about_colors_enabled }}",
+        "info": "t:info.eight_about_background_color"
       }
     ]
   },
