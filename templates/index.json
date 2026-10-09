@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Eight comes from the street, with the care of a tailor’s workshop. We want every piece to be a manifesto of freedom: a colourful oversized fit should give the same confidence as total black, and a fine fabric should move with you, never hold you back.</p>",
+            "text": "<p>Eight comes from the street, with a tailor’s care. Every piece is a manifesto of freedom.</p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
