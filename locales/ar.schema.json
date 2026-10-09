@@ -217,6 +217,8 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "eight_promo_position": "Slot in the product grid, counting from 1. Other promo tiles count as slots too.",
+    "eight_promo_collections": "Leave empty to show the tile in every collection that uses this template.",
     "eight_signup_tags": "Comma-separated tags added to new sign-ups. On product pages the product handle is added too, e.g. \"coming-soon, wool-duffel-bag\".",
     "eight_about_background_color": "Leave empty to use the header color, so the whole page is one tint.",
     "eight_about_colors": "Uses the header, dropdown and footer colors above, plus the section background below.",
@@ -254,6 +256,7 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "eight_promo_tile": "Promo tile",
     "eight_store_locator": "Store locator",
     "eight_store": "Store",
     "eight_size_guide": "Size guide",
@@ -705,6 +708,9 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "eight_promo_position": "Grid position",
+    "eight_promo_image_mobile": "Mobile image",
+    "eight_promo_collections": "Show only in",
     "eight_signup_tags": "Customer tags",
     "eight_about_colors_enabled": "Tint the whole About page",
     "eight_about_background_color": "Section background",

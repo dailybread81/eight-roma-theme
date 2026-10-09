@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "eight_promo_tile": "Foto promo",
     "eight_store_locator": "Store locator",
     "eight_store": "Negozio",
     "eight_size_guide": "Guida taglie",
@@ -176,6 +177,9 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "eight_promo_position": "Posizione nella griglia",
+    "eight_promo_image_mobile": "Immagine mobile",
+    "eight_promo_collections": "Mostra solo in",
     "eight_signup_tags": "Tag cliente",
     "eight_about_colors_enabled": "Pagina About tutta in tinta",
     "eight_about_background_color": "Sfondo sezioni",
@@ -1124,6 +1128,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_promo_position": "Casella della griglia prodotti, contando da 1. Anche le altre foto promo occupano una casella.",
+    "eight_promo_collections": "Lascia vuoto per mostrarla in tutte le collezioni che usano questo template.",
     "eight_signup_tags": "Tag separati da virgola aggiunti ai nuovi iscritti. Nelle pagine prodotto viene aggiunto anche l'handle del prodotto, es. \"coming-soon, borsone-in-lana\".",
     "eight_about_background_color": "Lascia vuoto per usare il colore dell'header, così tutta la pagina ha una sola tinta.",
     "eight_about_colors": "Usa i colori di header, menu a tendina e footer qui sopra, più lo sfondo delle sezioni qui sotto.",

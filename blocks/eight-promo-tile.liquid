@@ -1,0 +1,235 @@
+{%- doc -%}
+  Eight Roma — promo tile for the collection grid.
+
+  An editorial image that takes one product-card slot in the collection grid, with an
+  optional link and overlay text. Only rendered inside sections/main-collection.liquid:
+  the section reads the leading position marker to place the tile in the grid and
+  fills in the page number, so the tile also survives infinite scroll.
+  Renders nothing when an image is missing or the current collection is excluded.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign show_tile = true
+
+  if block_settings.image == blank
+    assign show_tile = false
+  endif
+
+  if block_settings.collections != blank and collection
+    assign show_tile = false
+    for allowed in block_settings.collections
+      if allowed.id == collection.id
+        assign show_tile = true
+        break
+      endif
+    endfor
+  endif
+
+  assign position = block_settings.position | prepend: '000' | slice: -3, 3
+  assign label = block_settings.text | strip_html | strip
+  assign alt_text = block_settings.image.alt | default: label
+-%}
+
+{%- if show_tile -%}
+  {{- '<!--eight-promo:' | append: position | append: '-->' -}}
+  <li
+    class="product-grid__item eight-promo-tile"
+    data-page="__EIGHT_PROMO_PAGE__"
+    ref="cards[]"
+    style="--eight-promo-overlay: {{ block_settings.overlay_opacity | divided_by: 100.0 }}; --eight-promo-text: {{ block_settings.text_color }};"
+    {{ block.shopify_attributes }}
+  >
+    {%- if block_settings.link != blank -%}
+      <a
+        class="eight-promo-tile__inner"
+        href="{{ block_settings.link }}"
+        {% if label == blank %}
+          aria-label="{{ alt_text | escape }}"
+        {% endif %}
+      >
+    {%- else -%}
+      <div class="eight-promo-tile__inner">
+    {%- endif -%}
+
+    <picture class="eight-promo-tile__media">
+      {%- if block_settings.image_mobile != blank -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ block_settings.image_mobile | image_url: width: 750 }} 750w, {{ block_settings.image_mobile | image_url: width: 1100 }} 1100w"
+          sizes="50vw"
+          width="{{ block_settings.image_mobile.width }}"
+          height="{{ block_settings.image_mobile.height }}"
+        >
+      {%- endif -%}
+      {{
+        block_settings.image
+        | image_url: width: 1600
+        | image_tag:
+          widths: '400, 600, 800, 1100, 1400, 1600',
+          sizes: '(min-width: 750px) 25vw, 50vw',
+          loading: 'lazy',
+          alt: alt_text,
+          class: 'eight-promo-tile__image'
+      }}
+    </picture>
+
+    {%- if label != blank -%}
+      <span class="eight-promo-tile__text">{{ block_settings.text }}</span>
+    {%- endif -%}
+
+    {%- if block_settings.link != blank -%}
+      </a>
+    {%- else -%}
+      </div>
+    {%- endif -%}
+  </li>
+{%- endif -%}
+
+{% stylesheet %}
+  /* Fills the whole cell (image and card details) of the row it sits in */
+  .eight-promo-tile {
+    position: relative;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .eight-promo-tile__inner {
+    position: relative;
+    display: block;
+    block-size: 100%;
+    min-block-size: 18rem;
+    overflow: hidden;
+    color: var(--eight-promo-text, #fff);
+    text-decoration: none;
+  }
+
+  .eight-promo-tile__media,
+  .eight-promo-tile__image {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .eight-promo-tile__image {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .eight-promo-tile__inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0 / var(--eight-promo-overlay, 0));
+    pointer-events: none;
+  }
+
+  .eight-promo-tile__text {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    padding: var(--padding-xl, 24px);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: var(--font-paragraph--size);
+    overflow-wrap: anywhere;
+  }
+
+  .eight-promo-tile__text > * {
+    margin: 0;
+  }
+
+  @media (any-pointer: fine) {
+    a.eight-promo-tile__inner:hover .eight-promo-tile__image {
+      transform: scale(1.03);
+    }
+  }
+
+  a.eight-promo-tile__inner:focus-visible {
+    outline: var(--focus-outline-width, 2px) solid currentColor;
+    outline-offset: calc(-1 * var(--focus-outline-width, 2px) - 2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eight-promo-tile__image {
+      transition: none;
+    }
+  }
+
+  /* Zoomed-out grid view shows products only */
+  [product-grid-view='zoom-out'] .eight-promo-tile {
+    display: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.eight_promo_tile",
+  "tag": null,
+  "settings": [
+    {
+      "type": "range",
+      "id": "position",
+      "label": "t:settings.eight_promo_position",
+      "info": "t:info.eight_promo_position",
+      "min": 1,
+      "max": 48,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:settings.eight_promo_image_mobile"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Discover the new collection"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:settings.overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 10
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "t:settings.eight_promo_collections",
+      "info": "t:info.eight_promo_collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.eight_promo_tile"
+    }
+  ]
+}
+{% endschema %}

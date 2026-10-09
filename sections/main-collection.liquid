@@ -59,9 +59,39 @@
         {% assign products_per_page = section.settings.products_per_page %}
       {% endif %}
 
+      {% comment %}
+        Eight Roma promo tiles: each tile renders with a leading `<!--eight-promo:NNN-->`
+        marker (NNN = grid slot, zero-padded so a plain sort is numeric). Slots count
+        tiles too; slots before this page decide how many tiles earlier pages used.
+      {% endcomment %}
+      {%- capture promo_tiles -%}{% content_for 'blocks' %}{%- endcapture -%}
+      {%- assign promo_tiles = promo_tiles | split: '<!--eight-promo:' | sort -%}
+
       {% paginate collection.products by products_per_page %}
+        {%- liquid
+          assign promo_page = paginate.current_page | append: ''
+          assign promo_used_before = 0
+          for promo in promo_tiles
+            assign promo_slot = promo | slice: 0, 3 | plus: 0
+            assign promo_page_start = paginate.current_offset | plus: promo_used_before
+            if promo_slot > 0 and promo_slot <= promo_page_start
+              assign promo_used_before = promo_used_before | plus: 1
+            endif
+          endfor
+          assign promo_slot_cursor = paginate.current_offset | plus: promo_used_before
+        -%}
         {% capture children %}
           {% for product in collection.products %}
+            {%- liquid
+              assign promo_slot_cursor = promo_slot_cursor | plus: 1
+              for promo in promo_tiles
+                assign promo_slot = promo | slice: 0, 3 | plus: 0
+                if promo_slot == promo_slot_cursor
+                  echo promo | slice: 6, promo.size | replace: '__EIGHT_PROMO_PAGE__', promo_page
+                  assign promo_slot_cursor = promo_slot_cursor | plus: 1
+                endif
+              endfor
+            -%}
             <li
               id="{{ section.id }}-{{ product.id }}"
               class="product-grid__item product-grid__item--{{ forloop.index0 }}"
@@ -77,6 +107,15 @@
               %}
             </li>
           {% endfor %}
+          {%- comment -%} Tiles placed past the last product close the final page {%- endcomment -%}
+          {%- if paginate.current_page == paginate.pages or paginate.pages == 0 -%}
+            {%- for promo in promo_tiles -%}
+              {%- assign promo_slot = promo | slice: 0, 3 | plus: 0 -%}
+              {%- if promo_slot > promo_slot_cursor -%}
+                {{- promo | slice: 6, promo.size | replace: '__EIGHT_PROMO_PAGE__', promo_page -}}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
         {% endcapture %}
 
         {% render 'product-grid',
@@ -97,6 +136,11 @@
   "enabled_on": {
     "templates": ["collection"]
   },
+  "blocks": [
+    {
+      "type": "eight-promo-tile"
+    }
+  ],
   "settings": [
     {
       "type": "select",
