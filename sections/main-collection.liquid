@@ -60,11 +60,25 @@
       {% endif %}
 
       {% comment %}
-        Eight Roma promo tiles: each tile renders with a leading `<!--eight-promo:NNN-->`
+        Eight Roma promo tiles, from the "Promo tile" blocks and from the collection
+        metafield custom.promo_tiles. Each tile renders with a leading `<!--eight-promo:NNN-->`
         marker (NNN = grid slot, zero-padded so a plain sort is numeric). Slots count
         tiles too; slots before this page decide how many tiles earlier pages used.
       {% endcomment %}
-      {%- capture promo_tiles -%}{% content_for 'blocks' %}{%- endcapture -%}
+      {%- capture promo_tiles -%}
+        {% content_for 'blocks' %}
+        {%- for tile in collection.metafields.custom.promo_tiles.value -%}
+          {%- render 'eight-promo-tile',
+            image: tile.image.value,
+            image_mobile: tile.image_mobile.value,
+            position: tile.position.value,
+            link: tile.link.value,
+            text: tile.text.value,
+            text_color: tile.text_color.value,
+            overlay_opacity: tile.overlay_opacity.value
+          -%}
+        {%- endfor -%}
+      {%- endcapture -%}
       {%- assign promo_tiles = promo_tiles | split: '<!--eight-promo:' | sort -%}
 
       {% paginate collection.products by products_per_page %}

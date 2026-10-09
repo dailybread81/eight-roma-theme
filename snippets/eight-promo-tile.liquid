@@ -1,0 +1,172 @@
+{%- doc -%}
+  Eight Roma — promo tile markup for the collection grid, shared by the "Promo tile"
+  theme block and the collection metafield `custom.promo_tiles` (metaobject `promo_tile`).
+
+  Output starts with an `<!--eight-promo:NNN-->` marker (NNN = zero-padded grid slot);
+  sections/main-collection.liquid uses it to place the tile and replaces
+  `__EIGHT_PROMO_PAGE__` with the current page. Also owns the tile styles, so they load
+  whichever source renders the tile.
+
+  @param {image} image - Main image
+  @param {image} [image_mobile] - Image used below 750px
+  @param {number} position - Grid slot, counting from 1
+  @param {string} [link] - Tile link
+  @param {string} [text] - Overlay text (inline rich text allowed)
+  @param {string} [text_color] - Text color, defaults to white
+  @param {number} [overlay_opacity] - Dark overlay, 0–80 (%), defaults to 10
+  @param {string} [attributes] - Extra attributes for the tile wrapper (block attributes)
+
+  @example
+  {% render 'eight-promo-tile', image: tile.image.value, position: tile.position.value, link: tile.link.value %}
+{%- enddoc -%}
+
+{%- liquid
+  assign position_label = position | prepend: '000' | slice: -3, 3
+  assign label = text | strip_html | strip
+  assign alt_text = image.alt | default: label
+  assign tile_text_color = text_color | default: '#FFFFFF'
+  assign tile_overlay = overlay_opacity | default: 10 | divided_by: 100.0
+
+  # The tile is a tall cell (about 3:5) and the photo is cropped to cover it, so a
+  # wider photo is shown scaled up: request widths for the scaled size, not the cell.
+  assign cover_scale = image.aspect_ratio | divided_by: 0.6 | at_least: 1 | round: 2
+  assign tile_sizes = '(min-width: 750px) calc(34vw * ' | append: cover_scale | append: '), calc(50vw * ' | append: cover_scale | append: ')'
+  assign mobile_scale = image_mobile.aspect_ratio | default: 0.6 | divided_by: 0.6 | at_least: 1 | round: 2
+  assign mobile_sizes = 'calc(50vw * ' | append: mobile_scale | append: ')'
+-%}
+
+{%- if image != blank and position != blank -%}
+  {{- '<!--eight-promo:' | append: position_label | append: '-->' -}}
+  <li
+    class="product-grid__item eight-promo-tile"
+    data-page="__EIGHT_PROMO_PAGE__"
+    ref="cards[]"
+    style="--eight-promo-overlay: {{ tile_overlay }}; --eight-promo-text: {{ tile_text_color }};"
+    {{ attributes }}
+  >
+    {%- if link != blank -%}
+      <a
+        class="eight-promo-tile__inner"
+        href="{{ link }}"
+        {% if label == blank %}
+          aria-label="{{ alt_text | escape }}"
+        {% endif %}
+      >
+    {%- else -%}
+      <div class="eight-promo-tile__inner">
+    {%- endif -%}
+
+    <picture class="eight-promo-tile__media">
+      {%- if image_mobile != blank -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ image_mobile | image_url: width: 600 }} 600w, {{ image_mobile | image_url: width: 900 }} 900w, {{ image_mobile | image_url: width: 1200 }} 1200w, {{ image_mobile | image_url: width: 1800 }} 1800w"
+          sizes="{{ mobile_sizes }}"
+          width="{{ image_mobile.width }}"
+          height="{{ image_mobile.height }}"
+        >
+      {%- endif -%}
+      {{
+        image
+        | image_url: width: 3000
+        | image_tag:
+          widths: '600, 800, 1100, 1400, 1800, 2200, 2600, 3000',
+          sizes: tile_sizes,
+          loading: 'lazy',
+          alt: alt_text,
+          class: 'eight-promo-tile__image'
+      }}
+    </picture>
+
+    {%- if label != blank -%}
+      <span class="eight-promo-tile__text">{{ text }}</span>
+    {%- endif -%}
+
+    {%- if link != blank -%}
+      </a>
+    {%- else -%}
+      </div>
+    {%- endif -%}
+  </li>
+{%- endif -%}
+
+{% stylesheet %}
+  /* Fills the whole cell (image and card details) of the row it sits in */
+  .eight-promo-tile {
+    position: relative;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .eight-promo-tile__inner {
+    position: relative;
+    display: block;
+    block-size: 100%;
+    min-block-size: 18rem;
+    overflow: hidden;
+    color: var(--eight-promo-text, #fff);
+    text-decoration: none;
+  }
+
+  .eight-promo-tile__media,
+  .eight-promo-tile__image {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .eight-promo-tile__image {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .eight-promo-tile__inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0 / var(--eight-promo-overlay, 0));
+    pointer-events: none;
+  }
+
+  .eight-promo-tile__text {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    padding: var(--padding-xl, 24px);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: var(--font-paragraph--size);
+    overflow-wrap: anywhere;
+  }
+
+  .eight-promo-tile__text > * {
+    margin: 0;
+  }
+
+  @media (any-pointer: fine) {
+    a.eight-promo-tile__inner:hover .eight-promo-tile__image {
+      transform: scale(1.03);
+    }
+  }
+
+  a.eight-promo-tile__inner:focus-visible {
+    outline: var(--focus-outline-width, 2px) solid currentColor;
+    outline-offset: calc(-1 * var(--focus-outline-width, 2px) - 2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eight-promo-tile__image {
+      transition: none;
+    }
+  }
+
+  /* Zoomed-out grid view shows products only */
+  [product-grid-view='zoom-out'] .eight-promo-tile {
+    display: none;
+  }
+{% endstylesheet %}
