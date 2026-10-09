@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Eight comes from the street, with a tailor’s care. Every piece is a manifesto of freedom.</p>",
+            "text": "<p>Street roots, tailor’s hands. Every piece is a manifesto of freedom, made to move with you.</p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
