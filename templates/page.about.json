@@ -575,7 +575,7 @@
             "link": "",
             "video": "shopify://files/videos/Sequenza 06_1_bf9e7426-9933-4159-b75d-4486a391f207.mp4",
             "video_loop": true,
-            "video_autoplay": false,
+            "video_autoplay": true,
             "image_position": "cover",
             "video_position": "cover"
           },
@@ -1089,7 +1089,7 @@
           "type": "button",
           "settings": {
             "label": "Discover the collection",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections/eight-roma",
             "open_in_new_tab": false,
             "style_class": "button",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
