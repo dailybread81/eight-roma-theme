@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beräknas i kassan.",
     "taxes_included": "Skatter ingår.",
     "product_badge_sold_out": "Slutsåld",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Rea",
     "search_input_label": "Sökning",
     "search_input_placeholder": "Sök",

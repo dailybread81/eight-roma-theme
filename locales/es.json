@@ -166,6 +166,7 @@
     "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la página de pago.",
     "taxes_included": "Impuestos incluidos.",
     "product_badge_sold_out": "Agotado",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Oferta",
     "grid_view": {
       "default_view": "Predeterminado",

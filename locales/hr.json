@@ -166,6 +166,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Poštarina</a> se obračunava prilikom plaćanja.",
     "taxes_included": "Porezi su uključeni.",
     "product_badge_sold_out": "Rasprodano",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Sniženje",
     "search_input_label": "Traži",
     "search_input_placeholder": "Pretraživanje",

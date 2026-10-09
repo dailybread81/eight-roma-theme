@@ -166,6 +166,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Envio</a> calculado na finalização da compra.",
     "taxes_included": "Impostos incluídos.",
     "product_badge_sold_out": "Esgotado",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Saldo",
     "search_input_label": "Pesquisar",
     "search_input_placeholder": "Pesquisar",

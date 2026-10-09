@@ -1,0 +1,14 @@
+{%- doc -%}
+  Eight Roma — tinted page scope.
+
+  Outputs `home` or `about` when the current page uses the tint from theme settings >
+  Page colors, and nothing otherwise. Capture it to decide whether to apply the tint.
+
+  @example
+  {% capture tint_scope %}{% render 'eight-tint-scope' %}{% endcapture %}
+{%- enddoc -%}
+{%- if template.name == 'index' and settings.eight_home_colors_enabled -%}
+  home
+{%- elsif template.name == 'page' and template.suffix == 'about' and settings.eight_about_colors_enabled -%}
+  about
+{%- endif -%}

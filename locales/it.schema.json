@@ -9,6 +9,12 @@
  */
 {
   "names": {
+    "eight_promo_tile": "Foto promo",
+    "eight_store_locator": "Store locator",
+    "eight_store": "Negozio",
+    "eight_size_guide": "Guida taglie",
+    "eight_siblings": "Varianti colore (prodotti correlati)",
+    "eight_homepage_colors": "Colori pagine",
     "404": "404",
     "colors": "Palette colori",
     "custom_section": "Sezione personalizzata",
@@ -171,6 +177,33 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "eight_promo_position": "Posizione nella griglia",
+    "eight_promo_image_mobile": "Immagine mobile",
+    "eight_promo_collections": "Mostra solo in",
+    "eight_signup_tags": "Tag cliente",
+    "eight_about_colors_enabled": "Pagina About tutta in tinta",
+    "eight_about_background_color": "Sfondo sezioni",
+    "eight_store_show_map": "Mostra mappa",
+    "eight_store_map_zoom": "Zoom mappa",
+    "eight_store_consent_text": "Testo prima di caricare la mappa",
+    "eight_store_load_map_label": "Pulsante carica mappa",
+    "eight_store_show_on_map_label": "Etichetta \"vedi sulla mappa\"",
+    "eight_store_name": "Nome negozio",
+    "eight_store_address": "Indirizzo",
+    "eight_store_map_query": "Ricerca su mappa",
+    "eight_store_hours": "Orari",
+    "eight_store_phone": "Telefono",
+    "eight_store_email": "Email",
+    "eight_store_directions_label": "Etichetta indicazioni",
+    "eight_copyright_text": "Testo copyright",
+    "eight_copyright_show_year": "Mostra anno corrente",
+    "eight_siblings_heading": "Titolo",
+    "eight_siblings_swatch_size": "Larghezza swatch",
+    "eight_siblings_swatch_ratio": "Forma swatch",
+    "eight_home_colors_enabled": "Usa colori personalizzati in homepage",
+    "eight_home_header_color": "Sfondo header",
+    "eight_home_dropdown_color": "Sfondo menu a tendina",
+    "eight_home_footer_color": "Sfondo footer",
     "alignment": "Allineamento",
     "autoplay": "Riproduzione automatica",
     "background": "Sfondo",
@@ -586,6 +619,8 @@
     "title_preset": "Preimpostazione titolo"
   },
   "options": {
+    "eight_siblings_square": "Quadrato",
+    "eight_siblings_portrait": "Verticale",
     "apple": "Mela",
     "arrow": "Freccia",
     "auto": "Automatico",
@@ -868,6 +903,8 @@
     "direction_top_start": "In alto a sinistra"
   },
   "content": {
+    "eight_about_colors": "Pagina About",
+    "eight_store_map": "Mappa",
     "advanced": "Avanzate",
     "background_image": "Immagine di sfondo",
     "background_video": "Video di sfondo",
@@ -1091,6 +1128,16 @@
     "disclosures": "Informative"
   },
   "info": {
+    "eight_promo_position": "Casella della griglia prodotti, contando da 1. Anche le altre foto promo occupano una casella.",
+    "eight_promo_collections": "Lascia vuoto per mostrarla in tutte le collezioni che usano questo template.",
+    "eight_signup_tags": "Tag separati da virgola aggiunti ai nuovi iscritti. Nelle pagine prodotto viene aggiunto anche l'handle del prodotto, es. \"coming-soon, borsone-in-lana\".",
+    "eight_about_background_color": "Lascia vuoto per usare il colore dell'header, così tutta la pagina ha una sola tinta.",
+    "eight_about_colors": "Usa i colori di header, menu a tendina e footer qui sopra, più lo sfondo delle sezioni qui sotto.",
+    "eight_store_map_query": "Facoltativo. Testo usato per trovare il negozio su Google Maps, es. \"Eight Roma, Via Euripide 4, Roma\". Se vuoto usa l'indirizzo.",
+    "eight_size_guide": "Apre in un pannello laterale la pagina indicata nel metafield prodotto Size chart (theme.size_chart). Non compare sui prodotti senza guida.",
+    "eight_copyright_text": "Compare dopo il simbolo ©. Lascia vuoto per usare il nome del negozio con link alla home. Esempio: Eight Roma S.r.l. – P.IVA 01234567890",
+    "eight_siblings": "Mostra i prodotti del metafield custom.sibilings come swatch colore. Usa il metafield di categoria Colore se compilato, altrimenti la foto del prodotto.",
+    "eight_home_colors": "Vale solo per la homepage. Le altre pagine mantengono i colori di header e footer impostati nelle rispettive sezioni.",
     "carousel_layout_on_mobile": "Sui dispositivi mobili viene sempre utilizzato il carosello.",
     "video_alt_text": "Descrivi il video per gli utenti di tecnologie assistive",
     "video_autoplay": "I video saranno senza audio per impostazione predefinita",

@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Phí vận chuyển</a> được tính khi thanh toán.",
     "taxes_included": "Đã bao gồm thuế.",
     "product_badge_sold_out": "Đã bán hết",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Giảm giá",
     "search_input_label": "Tìm kiếm",
     "search_input_placeholder": "Tìm kiếm",
