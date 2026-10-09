@@ -13,7 +13,7 @@
   @param {string} [link] - Tile link
   @param {string} [text] - Overlay text (inline rich text allowed)
   @param {string} [text_color] - Text color, defaults to white
-  @param {number} [overlay_opacity] - Dark overlay, 0–80 (%), defaults to 10
+  @param {number} [overlay_opacity] - Dark overlay, 0–80 (%), defaults to 0
   @param {string} [attributes] - Extra attributes for the tile wrapper (block attributes)
 
   @example
@@ -25,7 +25,7 @@
   assign label = text | strip_html | strip
   assign alt_text = image.alt | default: label
   assign tile_text_color = text_color | default: '#FFFFFF'
-  assign tile_overlay = overlay_opacity | default: 10 | divided_by: 100.0
+  assign tile_overlay = overlay_opacity | default: 0 | divided_by: 100.0
 
   # The tile is a tall cell (about 3:5) and the photo is cropped to cover it, so a
   # wider photo is shown scaled up: request widths for the scaled size, not the cell.
