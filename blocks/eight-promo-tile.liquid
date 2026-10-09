@@ -29,6 +29,13 @@
   assign position = block_settings.position | prepend: '000' | slice: -3, 3
   assign label = block_settings.text | strip_html | strip
   assign alt_text = block_settings.image.alt | default: label
+
+  # The tile is a tall cell (about 3:5) and the photo is cropped to cover it, so a
+  # wider photo is shown scaled up: request widths for the scaled size, not the cell.
+  assign cover_scale = block_settings.image.aspect_ratio | divided_by: 0.6 | at_least: 1 | round: 2
+  assign tile_sizes = '(min-width: 750px) calc(34vw * ' | append: cover_scale | append: '), calc(50vw * ' | append: cover_scale | append: ')'
+  assign mobile_scale = block_settings.image_mobile.aspect_ratio | default: 0.6 | divided_by: 0.6 | at_least: 1 | round: 2
+  assign mobile_sizes = 'calc(50vw * ' | append: mobile_scale | append: ')'
 -%}
 
 {%- if show_tile -%}
@@ -56,18 +63,18 @@
       {%- if block_settings.image_mobile != blank -%}
         <source
           media="(max-width: 749px)"
-          srcset="{{ block_settings.image_mobile | image_url: width: 750 }} 750w, {{ block_settings.image_mobile | image_url: width: 1100 }} 1100w"
-          sizes="50vw"
+          srcset="{{ block_settings.image_mobile | image_url: width: 600 }} 600w, {{ block_settings.image_mobile | image_url: width: 900 }} 900w, {{ block_settings.image_mobile | image_url: width: 1200 }} 1200w, {{ block_settings.image_mobile | image_url: width: 1800 }} 1800w"
+          sizes="{{ mobile_sizes }}"
           width="{{ block_settings.image_mobile.width }}"
           height="{{ block_settings.image_mobile.height }}"
         >
       {%- endif -%}
       {{
         block_settings.image
-        | image_url: width: 1600
+        | image_url: width: 3000
         | image_tag:
-          widths: '400, 600, 800, 1100, 1400, 1600',
-          sizes: '(min-width: 750px) 25vw, 50vw',
+          widths: '600, 800, 1100, 1400, 1800, 2200, 2600, 3000',
+          sizes: tile_sizes,
           loading: 'lazy',
           alt: alt_text,
           class: 'eight-promo-tile__image'
