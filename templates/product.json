@@ -110,9 +110,18 @@
                 "case": "none",
                 "text_color": "",
                 "padding-block-start": 0,
-                "padding-block-end": 50,
+                "padding-block-end": 24,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "custom_liquid_TQaRdD": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "disabled": true,
+              "settings": {
+                "custom_liquid": "{%- if product.metafields.custom.totale_produzione != blank -%}\n  <p class=\"product__run\">Limited to {{ product.metafields.custom.totale_produzione }} pieces. Made in Italy.</p>\n{%- endif -%}"
               },
               "blocks": {}
             },
@@ -400,6 +409,7 @@
           "block_order": [
             "text_9WaLn7",
             "price_a7krng",
+            "custom_liquid_TQaRdD",
             "divider_HrJgFt",
             "eight_siblings_Kq7RmX",
             "variant_picker_R3rGDr",
