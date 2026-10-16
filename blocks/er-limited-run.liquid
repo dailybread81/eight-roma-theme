@@ -1,0 +1,257 @@
+{%- comment -%}
+  Eight Roma — Limited run
+  Theme block (Atelier / Horizon). Path: blocks/er-limited-run.liquid
+  Quantità da metafield prodotto custom.totale_produzione (integer),
+  sovrascrivibile dall'editor. Usa [count] nel testo come segnaposto.
+{%- endcomment -%}
+
+{%- liquid
+  assign product = closest.product
+
+  assign count = block.settings.count_override
+  if count == blank or count == 0
+    assign count = product.metafields.custom.totale_produzione.value
+  endif
+
+  if product.available == false and block.settings.text_sold_out != blank
+    assign template = block.settings.text_sold_out
+  else
+    assign template = block.settings.text
+  endif
+
+  assign needs_count = false
+  if template contains '[count]'
+    assign needs_count = true
+  endif
+
+  assign show = true
+  if template == blank
+    assign show = false
+  elsif needs_count and count == blank
+    assign show = false
+  endif
+
+  assign output = template | replace: '[count]', count
+
+  case block.settings.font
+    when 'heading'
+      assign font_var = 'var(--font-heading--family)'
+    when 'subheading'
+      assign font_var = 'var(--font-subheading--family)'
+    when 'accent'
+      assign font_var = 'var(--font-accent--family)'
+    else
+      assign font_var = 'var(--font-body--family)'
+  endcase
+-%}
+
+{%- if show -%}
+  <div
+    class="er-limited-run er-limited-run--{{ block.settings.alignment }}{% if block.settings.uppercase %} er-limited-run--upper{% endif %}{% if block.settings.divider %} er-limited-run--divider{% endif %}"
+    style="
+      --er-lr-font: {{ font_var }};
+      --er-lr-size: {{ block.settings.font_size }}px;
+      --er-lr-size-mobile: {{ block.settings.font_size_mobile }}px;
+      --er-lr-weight: {{ block.settings.font_weight }};
+      --er-lr-tracking: {{ block.settings.letter_spacing | divided_by: 100.0 }}em;
+      --er-lr-line: {{ block.settings.line_height | divided_by: 10.0 }};
+      {%- if block.settings.color != blank %} --er-lr-color: {{ block.settings.color }};{% endif %}
+      {%- if block.settings.divider_color != blank %} --er-lr-divider: {{ block.settings.divider_color }};{% endif %}
+      --er-lr-pt: {{ block.settings.padding_top }}px;
+      --er-lr-pb: {{ block.settings.padding_bottom }}px;
+      --er-lr-pl: {{ block.settings.padding_left }}px;
+      --er-lr-pr: {{ block.settings.padding_right }}px;
+    "
+    {{ block.shopify_attributes }}
+  >
+    <p class="er-limited-run__text">{{ output }}</p>
+    {%- if block.settings.subtext != blank -%}
+      <p class="er-limited-run__subtext">{{ block.settings.subtext | replace: '[count]', count }}</p>
+    {%- endif -%}
+  </div>
+{%- elsif request.design_mode -%}
+  <div class="er-limited-run er-limited-run--placeholder" {{ block.shopify_attributes }}>
+    <p class="er-limited-run__text">Limited run — imposta il metafield custom.totale_produzione o il numero manuale</p>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .er-limited-run {
+    padding: var(--er-lr-pt) var(--er-lr-pr) var(--er-lr-pb) var(--er-lr-pl);
+    color: var(--er-lr-color, currentColor);
+    font-family: var(--er-lr-font);
+    width: 100%;
+  }
+  .er-limited-run__text,
+  .er-limited-run__subtext {
+    margin: 0;
+    font-family: inherit;
+    font-size: var(--er-lr-size-mobile);
+    font-weight: var(--er-lr-weight);
+    letter-spacing: var(--er-lr-tracking);
+    line-height: var(--er-lr-line);
+  }
+  .er-limited-run__subtext {
+    margin-top: 0.4em;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 0.7;
+  }
+  @media screen and (min-width: 750px) {
+    .er-limited-run__text,
+    .er-limited-run__subtext {
+      font-size: var(--er-lr-size);
+    }
+  }
+  .er-limited-run--upper .er-limited-run__text { text-transform: uppercase; }
+  .er-limited-run--left { text-align: left; }
+  .er-limited-run--center { text-align: center; }
+  .er-limited-run--right { text-align: right; }
+  .er-limited-run--divider {
+    border-top: 1px solid var(--er-lr-divider, rgb(0 0 0 / 0.12));
+    border-bottom: 1px solid var(--er-lr-divider, rgb(0 0 0 / 0.12));
+  }
+  .er-limited-run--placeholder {
+    padding: 8px;
+    font-size: 12px;
+    opacity: 0.5;
+    border: 1px dashed currentColor;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "ER · Limited run",
+  "tag": null,
+  "settings": [
+    { "type": "header", "content": "Contenuto" },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Testo",
+      "default": "Limited to [count] pieces.",
+      "info": "[count] viene sostituito con il numero di capi. Se manca il numero, il blocco non viene mostrato."
+    },
+    {
+      "type": "text",
+      "id": "text_sold_out",
+      "label": "Testo a prodotto esaurito",
+      "default": "Run complete.",
+      "info": "Lascia vuoto per usare il testo principale anche da esaurito."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Sottotesto (opzionale)",
+      "info": "Supporta [count]. Es.: Produced in a single run. No restock."
+    },
+    {
+      "type": "number",
+      "id": "count_override",
+      "label": "Numero capi manuale",
+      "info": "Opzionale. Sovrascrive il metafield custom.totale_produzione."
+    },
+
+    { "type": "header", "content": "Tipografia" },
+    {
+      "type": "select",
+      "id": "font",
+      "label": "Font",
+      "options": [
+        { "value": "body", "label": "Body" },
+        { "value": "subheading", "label": "Subheading" },
+        { "value": "heading", "label": "Heading" },
+        { "value": "accent", "label": "Accent" }
+      ],
+      "default": "body"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Dimensione desktop",
+      "min": 10, "max": 32, "step": 1, "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Dimensione mobile",
+      "min": 10, "max": 32, "step": 1, "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Peso",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Spaziatura lettere",
+      "min": 0, "max": 30, "step": 1,
+      "default": 8,
+      "info": "In centesimi di em (8 = 0.08em)."
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "label": "Interlinea",
+      "min": 10, "max": 20, "step": 1,
+      "default": 14,
+      "info": "In decimi (14 = 1.4)."
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Maiuscolo",
+      "default": true
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Allineamento",
+      "default": "left"
+    },
+
+    { "type": "header", "content": "Colori" },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Colore testo",
+      "info": "Vuoto = eredita dallo schema colori."
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Linee divisorie sopra e sotto",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Colore divisori"
+    },
+
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "label": "Sopra", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Sotto", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_left", "label": "Sinistra", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_right", "label": "Destra", "min": 0, "max": 100, "step": 2, "unit": "px", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "ER · Limited run",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
