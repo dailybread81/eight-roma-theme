@@ -120,7 +120,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "{%- if product.metafields.custom.totale_produzione != blank -%}\n  <p class=\"product__run\">Limited to {{ product.metafields.custom.totale_produzione }} pieces. Made in Italy.</p>\n{%- endif -%}"
+                "custom_liquid": "{%- if product.metafields.custom.totale_produzione != blank -%}\n  <p class=\"product__run\">Limited to {{ product.metafields.custom.totale_produzione }} pieces</p>\n{%- endif -%}"
               },
               "blocks": {}
             },
