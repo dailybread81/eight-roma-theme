@@ -168,6 +168,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Koszt wysyłki</a> obliczony przy realizacji zakupu.",
     "taxes_included": "Z wliczonymi podatkami.",
     "product_badge_sold_out": "Wyprzedane",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "W promocji",
     "search_input_label": "Szukaj",
     "search_input_placeholder": "Szukaj",

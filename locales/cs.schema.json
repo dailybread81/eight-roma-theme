@@ -9,6 +9,12 @@
  */
 {
   "names": {
+    "eight_promo_tile": "Promo tile",
+    "eight_store_locator": "Store locator",
+    "eight_store": "Store",
+    "eight_size_guide": "Size guide",
+    "eight_siblings": "Color siblings",
+    "eight_homepage_colors": "Homepage colors",
     "404": "404",
     "colors": "Paleta barev",
     "custom_section": "Vlastní sekce",
@@ -171,6 +177,33 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "eight_promo_position": "Grid position",
+    "eight_promo_image_mobile": "Mobile image",
+    "eight_promo_collections": "Show only in",
+    "eight_signup_tags": "Customer tags",
+    "eight_about_colors_enabled": "Tint the whole About page",
+    "eight_about_background_color": "Section background",
+    "eight_store_show_map": "Show map",
+    "eight_store_map_zoom": "Map zoom",
+    "eight_store_consent_text": "Text before the map loads",
+    "eight_store_load_map_label": "Load map button",
+    "eight_store_show_on_map_label": "Show on map label",
+    "eight_store_name": "Store name",
+    "eight_store_address": "Address",
+    "eight_store_map_query": "Map search",
+    "eight_store_hours": "Opening hours",
+    "eight_store_phone": "Phone",
+    "eight_store_email": "Email",
+    "eight_store_directions_label": "Directions label",
+    "eight_copyright_text": "Copyright text",
+    "eight_copyright_show_year": "Show current year",
+    "eight_siblings_heading": "Heading",
+    "eight_siblings_swatch_size": "Swatch width",
+    "eight_siblings_swatch_ratio": "Swatch shape",
+    "eight_home_colors_enabled": "Use custom colors on the homepage",
+    "eight_home_header_color": "Header background",
+    "eight_home_dropdown_color": "Dropdown menu background",
+    "eight_home_footer_color": "Footer background",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",
@@ -586,6 +619,8 @@
     "title_preset": "Předvolba nadpisu"
   },
   "options": {
+    "eight_siblings_square": "Square",
+    "eight_siblings_portrait": "Portrait",
     "apple": "Apple",
     "arrow": "Šipka",
     "auto": "Automaticky",
@@ -868,6 +903,8 @@
     "direction_top_start": "Vlevo nahoře"
   },
   "content": {
+    "eight_about_colors": "About page",
+    "eight_store_map": "Map",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
     "background_video": "Video na pozadí",
@@ -1091,6 +1128,16 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "eight_promo_position": "Slot in the product grid, counting from 1. Other promo tiles count as slots too.",
+    "eight_promo_collections": "Leave empty to show the tile in every collection that uses this template.",
+    "eight_signup_tags": "Comma-separated tags added to new sign-ups. On product pages the product handle is added too, e.g. \"coming-soon, wool-duffel-bag\".",
+    "eight_about_background_color": "Leave empty to use the header color, so the whole page is one tint.",
+    "eight_about_colors": "Uses the header, dropdown and footer colors above, plus the section background below.",
+    "eight_store_map_query": "Optional. Text used to find the store on Google Maps, e.g. \"Eight Roma, Via Euripide 4, Roma\". Defaults to the address.",
+    "eight_size_guide": "Opens the page set in the product's Size chart metafield (theme.size_chart) in a side drawer. Hidden on products without a size guide.",
+    "eight_copyright_text": "Shown after the © symbol. Leave empty to use the store name linked to the homepage. Example: Eight Roma S.r.l. – VAT 01234567890",
+    "eight_siblings": "Shows the products in the custom.sibilings metafield as color swatches. Uses the Color category metafield when filled in, otherwise the product photo.",
+    "eight_home_colors": "Applies only to the homepage. Other pages keep the header and footer colors set in their sections.",
     "video_alt_text": "Popište video pro uživatele asistivních technologií",
     "video_autoplay": "Videa budou ve výchozím nastavení ztlumená",
     "video_external": "Použijte URL z YouTube nebo Vimeo",

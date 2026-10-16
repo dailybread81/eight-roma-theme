@@ -25,6 +25,16 @@
     </div>
   {% endif %}
   {%- form 'customer', class: 'email-signup__form spacing-style' %}
+    {%- if block_settings.tags != blank -%}
+      {%- liquid
+        # Eight Roma: tag sign-ups (e.g. coming-soon products) so they can be segmented in Customers
+        assign signup_tags = block_settings.tags
+        if closest.product
+          assign signup_tags = signup_tags | append: ', ' | append: closest.product.handle
+        endif
+      -%}
+      <input type="hidden" name="contact[tags]" value="{{ signup_tags | escape }}">
+    {%- endif -%}
     {% comment %} --- Input group classes --- {% endcomment %}
     {%- liquid
       assign input_group_classes = 'email-signup__input-group'
@@ -413,6 +423,12 @@
     {
       "type": "paragraph",
       "content": "t:content.email_signups_create_customer_profiles"
+    },
+    {
+      "type": "text",
+      "id": "tags",
+      "label": "t:settings.eight_signup_tags",
+      "info": "t:info.eight_signup_tags"
     },
     {
       "type": "select",

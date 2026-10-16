@@ -33,21 +33,25 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
+            "background_color": "",
             "video_position": "cover",
             "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
             "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-start": 24,
+            "padding-inline-end": 24
           },
           "blocks": {
             "group_MTNPDR": {
@@ -69,52 +73,39 @@
                 "height": "fit",
                 "custom_height": 100,
                 "background_media": "none",
+                "background_color": "",
                 "video_position": "cover",
                 "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
                 "toggle_overlay": false,
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "menu_zf63TX": {
-                  "type": "menu",
-                  "name": "t:names.menu",
-                  "settings": {
-                    "menu": "footer",
-                    "heading": "Shop",
-                    "menu_spacing": 12,
-                    "show_as_accordion": false,
-                    "accordion_icon": "caret",
-                    "accordion_dividers": false,
-                    "heading_preset": "h4",
-                    "link_preset": "h5",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
                 "menu_H4cHLN": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
-                    "menu": "",
-                    "heading": "About us",
+                    "menu": "brand",
+                    "heading": "Info",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
                     "accordion_icon": "caret",
                     "accordion_dividers": false,
+                    "background_color": "",
+                    "text_color": "",
                     "heading_preset": "h4",
                     "link_preset": "h5",
                     "padding-block-start": 0,
@@ -124,16 +115,39 @@
                   },
                   "blocks": {}
                 },
-                "menu_HFzgCj": {
+                "menu_8MnrXm": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
-                    "menu": "",
-                    "heading": "Connect",
+                    "menu": "footer",
+                    "heading": "Customer care",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
                     "accordion_icon": "caret",
                     "accordion_dividers": false,
+                    "background_color": "",
+                    "text_color": "",
+                    "heading_preset": "h4",
+                    "link_preset": "h5",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "menu_zf63TX": {
+                  "type": "menu",
+                  "name": "t:names.menu",
+                  "settings": {
+                    "menu": "shipping",
+                    "heading": "Shipping",
+                    "menu_spacing": 12,
+                    "show_as_accordion": false,
+                    "accordion_icon": "caret",
+                    "accordion_dividers": false,
+                    "background_color": "",
+                    "text_color": "",
                     "heading_preset": "h4",
                     "link_preset": "h5",
                     "padding-block-start": 0,
@@ -145,9 +159,9 @@
                 }
               },
               "block_order": [
-                "menu_zf63TX",
                 "menu_H4cHLN",
-                "menu_HFzgCj"
+                "menu_8MnrXm",
+                "menu_zf63TX"
               ]
             },
             "group_gz8NPq": {
@@ -169,17 +183,21 @@
                 "height": "fit",
                 "custom_height": 100,
                 "background_media": "none",
+                "background_color": "",
                 "video_position": "cover",
                 "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
                 "toggle_overlay": false,
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -201,6 +219,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
+                    "text_color": "",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -215,8 +234,11 @@
                   "type": "email-signup",
                   "name": "t:names.email_signup",
                   "settings": {
+                    "tags": "",
                     "width": "fill",
                     "custom_width": 100,
+                    "heading": "",
+                    "heading_text_color": "",
                     "heading_preset": "h3",
                     "border_style": "underline",
                     "input_style": "custom",
@@ -227,6 +249,10 @@
                     "input_border_color": "{{ settings.color_palette.foreground }}",
                     "input_type_preset": "paragraph",
                     "style_class": "button-unstyled",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}",
+                    "link_text_color": "",
                     "display_type": "arrow",
                     "label": "Sign up",
                     "integrated_button": false,
@@ -255,15 +281,16 @@
         "group_acXtYY"
       ],
       "settings": {
-        "section_width": "page-width",
+        "section_width": "full-width",
         "gap": 0,
-        "background_color": "{{ settings.color_palette.background }}",
+        "background_color": "#f6f6f6",
         "padding-block-start": 64,
-        "padding-block-end": 0
+        "padding-block-end": 64
       }
     },
     "logo_RVGHD7": {
       "type": "logo",
+      "disabled": true,
       "name": "t:names.logo",
       "settings": {
         "inverse": false,
@@ -288,7 +315,10 @@
         "copyright": {
           "type": "footer-copyright",
           "settings": {
-            "show_powered_by": true,
+            "copyright_text": "Black Cloth Srls Via Euripide 8 00125 Roma P.IVA 16354831006 <a href=\"https://www.matteobastioni.com\" target=\"_blank\" title=\"https://www.matteobastioni.com\">MBAD</a>",
+            "show_year": true,
+            "show_powered_by": false,
+            "text_color": "",
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -298,6 +328,7 @@
           "type": "footer-policy-list",
           "name": "t:names.policy_list",
           "settings": {
+            "text_color": "",
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -307,11 +338,20 @@
           "type": "social-links",
           "name": "t:names.social_media_links",
           "settings": {
-            "facebook_url": "https://www.facebook.com/",
-            "instagram_url": "https://www.instagram.com/",
-            "youtube_url": "https://www.youtube.com/",
-            "tiktok_url": "https://www.tiktok.com/",
-            "twitter_url": "https://www.x.com/"
+            "icon_color": "",
+            "facebook_url": "",
+            "instagram_url": "https://www.instagram.com/eight_roma/",
+            "youtube_url": "",
+            "tiktok_url": "",
+            "twitter_url": "",
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
           },
           "blocks": {}
         }
@@ -322,13 +362,15 @@
         "social_links_BGVf9A"
       ],
       "settings": {
-        "section_width": "page-width",
+        "section_width": "full-width",
         "gap": 24,
+        "background_color": "#f6f6f6",
         "divider_thickness": 1,
-        "divider_color": "{{ settings.color_palette.color2 }}",
-        "background_color": "{{ settings.color_palette.background }}",
+        "divider_color": "{{ settings.color_palette.foreground }}",
         "padding-block-start": 12,
-        "padding-block-end": 16
+        "padding-block-end": 16,
+        "padding-inline-start": 24,
+        "padding-inline-end": 24
       }
     }
   },

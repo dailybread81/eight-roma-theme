@@ -1,0 +1,102 @@
+{%- doc -%}
+  Eight Roma — promo tile block for the collection grid (editor-managed). Collection-
+  specific tiles can also come from the `custom.promo_tiles` collection metafield; both
+  render through snippets/eight-promo-tile.liquid. Renders nothing when the current
+  collection is excluded.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign show_tile = true
+
+  if block_settings.collections != blank and collection
+    assign show_tile = false
+    for allowed in block_settings.collections
+      if allowed.id == collection.id
+        assign show_tile = true
+        break
+      endif
+    endfor
+  endif
+-%}
+
+{%- if show_tile -%}
+  {%- capture tile_attributes -%}{{ block.shopify_attributes }}{%- endcapture -%}
+  {%- render 'eight-promo-tile',
+    image: block_settings.image,
+    image_mobile: block_settings.image_mobile,
+    position: block_settings.position,
+    link: block_settings.link,
+    text: block_settings.text,
+    text_color: block_settings.text_color,
+    overlay_opacity: block_settings.overlay_opacity,
+    attributes: tile_attributes
+  -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:names.eight_promo_tile",
+  "tag": null,
+  "settings": [
+    {
+      "type": "range",
+      "id": "position",
+      "label": "t:settings.eight_promo_position",
+      "info": "t:info.eight_promo_position",
+      "min": 1,
+      "max": 48,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:settings.eight_promo_image_mobile"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Discover the new collection"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:settings.overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "t:settings.eight_promo_collections",
+      "info": "t:info.eight_promo_collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.eight_promo_tile"
+    }
+  ]
+}
+{% endschema %}

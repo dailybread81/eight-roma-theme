@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">ค่าจัดส่ง</a>ที่คำนวณในขั้นตอนชำระเงิน",
     "taxes_included": "รวมภาษีแล้ว",
     "product_badge_sold_out": "ขายหมดแล้ว",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "ลดราคา",
     "search_input_label": "การค้นหา",
     "search_input_placeholder": "ค้นหา",

@@ -168,6 +168,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
     "taxes_included": "Mokesčiai įtraukti.",
     "product_badge_sold_out": "Išparduota",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Išpardavimas",
     "search_input_label": "Ieškoti",
     "search_input_placeholder": "Ieškoti",

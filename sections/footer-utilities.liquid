@@ -1,16 +1,25 @@
 
 
 {% liquid
-  if section.settings.background_color != blank
-    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  # Eight Roma: on tinted pages (homepage, About) the footer uses the color from theme settings > Page colors
+  assign section_background = section.settings.background_color
+  capture tint_scope
+    render 'eight-tint-scope'
+  endcapture
+  if tint_scope != blank and settings.eight_home_footer_color != blank
+    assign section_background = settings.eight_home_footer_color
+  endif
+
+  if section_background != blank
+    render 'contrast-override', background_color: section_background, section_id: section.id
   endif
 %}
 
 <div
-  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="section-background{% if section_background != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
 <div
-  class="section section--{{ section.settings.section_width }}{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="section section--{{ section.settings.section_width }}{% if section_background != blank %} color-custom-{{ section.id }}{% endif %}"
   {{ section.shopify_attributes }}
 >
   <div
@@ -178,6 +187,26 @@
       "step": 1,
       "unit": "px",
       "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     }
   ],
   "blocks": [

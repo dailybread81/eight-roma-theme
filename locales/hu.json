@@ -164,6 +164,7 @@
     "shipping_policy_html": "A fizetéskor kiszámított <a href=\"{{ link }}\">szállítási költség</a>.",
     "taxes_included": "Tartalmazza az adókat.",
     "product_badge_sold_out": "Elfogyott",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Akciós",
     "grid_view": {
       "default_view": "Alapértelmezett",

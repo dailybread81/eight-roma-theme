@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Biaya pengiriman</a> dihitung saat checkout.",
     "taxes_included": "Termasuk pajak.",
     "product_badge_sold_out": "Habis",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Promo",
     "search_input_label": "Cari",
     "search_input_placeholder": "Cari",

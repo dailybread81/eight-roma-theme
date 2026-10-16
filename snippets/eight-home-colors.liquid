@@ -1,0 +1,58 @@
+{%- doc -%}
+  Eight Roma — tinted page colors (homepage and About).
+
+  Overrides the header row and dropdown (submenu) backgrounds on tinted pages (see
+  snippets/eight-tint-scope.liquid), using theme settings > Page colors; on the About
+  page it also tints the page background. The header reads these through the
+  `--color-background-*-row` and `--color-submenu` custom properties that its
+  underlays paint, so the merchant's header section settings stay untouched for
+  every other page. The footer override lives in the footer group sections, where
+  `contrast-override` also adjusts text contrast.
+
+  Rendered from layout/theme.liquid after the color palette.
+
+  @example
+  {% render 'eight-home-colors' %}
+{%- enddoc -%}
+
+{%- capture tint_scope -%}{% render 'eight-tint-scope' %}{%- endcapture -%}
+
+{%- if tint_scope != blank -%}
+  {%- liquid
+    assign header_color = settings.eight_home_header_color
+    assign dropdown_color = settings.eight_home_dropdown_color
+    assign page_color = blank
+    if tint_scope == 'about'
+      assign page_color = settings.eight_about_background_color | default: header_color
+    endif
+  -%}
+  {%- if header_color != blank or dropdown_color != blank or page_color != blank -%}
+    {% style %}
+      {%- if page_color != blank %}
+        /* Whole page in the tint: sections without their own color, drawers and popovers */
+        body {
+          --color-background: {{ page_color }};
+          --color-background-rgb: {{ page_color.rgb }};
+          background-color: {{ page_color }};
+        }
+      {%- endif %}
+
+      {%- if header_color != blank %}
+        #header-component {
+          --color-background-top-row: {{ header_color }} !important;
+          --color-background-bottom-row: {{ header_color }} !important;
+        }
+      {%- endif %}
+
+      #header-component .header__underlay {
+        {%- if header_color != blank %}
+          /* Transparent header: on hover/focus the theme swaps the rows to --color-background */
+          --color-background: {{ header_color }};
+        {%- endif %}
+        {%- if dropdown_color != blank %}
+          --color-submenu: {{ dropdown_color }} !important;
+        {%- endif %}
+      }
+    {% endstyle %}
+  {%- endif -%}
+{%- endif -%}

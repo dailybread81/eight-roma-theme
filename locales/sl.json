@@ -168,6 +168,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Dostava</a> se obračuna ob zaključku nakupa.",
     "taxes_included": "Davki vključeni.",
     "product_badge_sold_out": "Razprodano",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Znižanje",
     "search_input_label": "Išči",
     "search_input_placeholder": "Išči",

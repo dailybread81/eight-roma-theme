@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Доставката</a> се изчислява при плащане.",
     "taxes_included": "С включени данъци.",
     "product_badge_sold_out": "Изчерпано",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Разпродажба",
     "grid_view": {
       "default_view": "По подразбиране",

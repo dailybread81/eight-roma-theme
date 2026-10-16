@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Toimituskulut</a> lasketaan kassalla.",
     "taxes_included": "Sisältää verot.",
     "product_badge_sold_out": "Loppuunmyyty",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Alennusmyynti",
     "search_input_label": "Hae",
     "search_input_placeholder": "Hae",
