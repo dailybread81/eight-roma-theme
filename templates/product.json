@@ -619,11 +619,20 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "custom_liquid_RVVyde": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "{%- if product.metafields.custom.total_pieces != blank -%}\n  <p class=\"product__run\">Limited to {{ product.metafields.custom.total_pieces }} pieces. Made in Italy.</p>\n{%- endif -%}"
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
                     "text_CayfE3",
-                    "price_ahRCgD"
+                    "price_ahRCgD",
+                    "custom_liquid_RVVyde"
                   ]
                 },
                 "group_PihxwT": {
