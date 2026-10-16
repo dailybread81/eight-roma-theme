@@ -116,11 +116,28 @@
               },
               "blocks": {}
             },
-            "custom_liquid_TQaRdD": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
+            "er_limited_run_37FfgY": {
+              "type": "er-limited-run",
+              "name": "ER · Limited run",
               "settings": {
-                "custom_liquid": "{%- if product.metafields.custom.totale_produzione != blank -%}\n  <p class=\"product__run\">Limited to {{ product.metafields.custom.totale_produzione }} pieces</p>\n{%- endif -%}"
+                "text": "Limited to [count] pieces.",
+                "text_sold_out": "Run complete.",
+                "subtext": "",
+                "font": "body",
+                "font_size": 12,
+                "font_size_mobile": 11,
+                "font_weight": "400",
+                "letter_spacing": 8,
+                "line_height": 14,
+                "uppercase": true,
+                "alignment": "left",
+                "color": "",
+                "divider": false,
+                "divider_color": "",
+                "padding_top": 0,
+                "padding_bottom": 0,
+                "padding_left": 0,
+                "padding_right": 0
               },
               "blocks": {}
             },
@@ -408,7 +425,7 @@
           "block_order": [
             "text_9WaLn7",
             "price_a7krng",
-            "custom_liquid_TQaRdD",
+            "er_limited_run_37FfgY",
             "divider_HrJgFt",
             "eight_siblings_Kq7RmX",
             "variant_picker_R3rGDr",
