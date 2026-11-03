@@ -295,7 +295,7 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "hoodies",
+          "sweats",
           "shirts",
           "t-shirts"
         ],
