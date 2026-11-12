@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "casting": {
+      "type": "er-casting",
+      "settings": {}
+    }
+  },
+  "order": [
+    "casting"
+  ]
+}
