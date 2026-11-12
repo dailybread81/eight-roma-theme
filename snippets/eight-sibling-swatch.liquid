@@ -1,0 +1,51 @@
+{%- doc -%}
+  Eight Roma — one color sibling swatch, linking to the product.
+  Styles live in blocks/eight-siblings.liquid.
+
+  Swatch fill, in order: color, then image, of the product's `shopify.color-pattern`
+  metafield; otherwise the product's featured image. Label: the color-pattern label,
+  otherwise the product title.
+
+  @param {product} item - The product the swatch links to
+  @param {product} current_product - The product being viewed, marked as current
+
+  @example
+  {% render 'eight-sibling-swatch', item: sibling, current_product: closest.product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign color_pattern = item.metafields.shopify['color-pattern'].value | first
+  assign item_label = color_pattern.label.value | default: item.title
+
+  assign swatch_background = ''
+  if color_pattern.color.value != blank
+    assign swatch_background = 'rgb(' | append: color_pattern.color.value.rgb | append: ')'
+  elsif color_pattern.image.value != blank
+    assign swatch_url = color_pattern.image.value | image_url: width: 160
+    assign swatch_background = 'url(' | append: swatch_url | append: ')'
+  elsif item.featured_image != blank
+    assign swatch_url = item.featured_image | image_url: width: 160
+    assign swatch_background = 'url(' | append: swatch_url | append: ')'
+  endif
+-%}
+
+<a
+  href="{{ item.url }}"
+  class="eight-siblings__link{% unless item.available %} eight-siblings__link--sold-out{% endunless %}"
+  {% if item.id == current_product.id %}
+    aria-current="page"
+  {% endif %}
+  title="{{ item_label | escape }}"
+>
+  <span
+    class="eight-siblings__swatch"
+    {% if swatch_background != blank %}
+      style="--eight-sibling-background: {{ swatch_background }};"
+    {% endif %}
+    aria-hidden="true"
+  ></span>
+  <span class="visually-hidden">
+    {{- item_label | escape -}}
+    {%- unless item.available %} - {{ 'products.product.sold_out' | t }}{% endunless -%}
+  </span>
+</a>

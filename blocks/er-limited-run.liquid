@@ -2,16 +2,13 @@
   Eight Roma — Limited run
   Theme block (Atelier / Horizon). Path: blocks/er-limited-run.liquid
   Quantità da metafield prodotto custom.totale_produzione (integer),
-  sovrascrivibile dall'editor. Usa [count] nel testo come segnaposto.
+  Se il metafield è vuoto il blocco non mostra nulla. Usa [count] nel testo.
 {%- endcomment -%}
 
 {%- liquid
   assign product = closest.product
 
-  assign count = block.settings.count_override
-  if count == blank or count == 0
-    assign count = product.metafields.custom.totale_produzione.value
-  endif
+  assign count = product.metafields.custom.totale_produzione.value
 
   if product.available == false and block.settings.text_sold_out != blank
     assign template = block.settings.text_sold_out
@@ -19,15 +16,8 @@
     assign template = block.settings.text
   endif
 
-  assign needs_count = false
-  if template contains '[count]'
-    assign needs_count = true
-  endif
-
   assign show = true
-  if template == blank
-    assign show = false
-  elsif needs_count and count == blank
+  if count == blank or template == blank
     assign show = false
   endif
 
@@ -69,10 +59,6 @@
       <p class="er-limited-run__subtext">{{ block.settings.subtext | replace: '[count]', count }}</p>
     {%- endif -%}
   </div>
-{%- elsif request.design_mode -%}
-  <div class="er-limited-run er-limited-run--placeholder" {{ block.shopify_attributes }}>
-    <p class="er-limited-run__text">Limited run — imposta il metafield custom.totale_produzione o il numero manuale</p>
-  </div>
 {%- endif -%}
 
 {% stylesheet %}
@@ -112,12 +98,6 @@
     border-top: 1px solid var(--er-lr-divider, rgb(0 0 0 / 0.12));
     border-bottom: 1px solid var(--er-lr-divider, rgb(0 0 0 / 0.12));
   }
-  .er-limited-run--placeholder {
-    padding: 8px;
-    font-size: 12px;
-    opacity: 0.5;
-    border: 1px dashed currentColor;
-  }
 {% endstylesheet %}
 
 {% schema %}
@@ -131,7 +111,7 @@
       "id": "text",
       "label": "Testo",
       "default": "Limited to [count] pieces.",
-      "info": "[count] viene sostituito con il numero di capi. Se manca il numero, il blocco non viene mostrato."
+      "info": "[count] viene sostituito con custom.totale_produzione. Se il metafield è vuoto, il blocco non viene mostrato."
     },
     {
       "type": "text",
@@ -145,12 +125,6 @@
       "id": "subtext",
       "label": "Sottotesto (opzionale)",
       "info": "Supporta [count]. Es.: Produced in a single run. No restock."
-    },
-    {
-      "type": "number",
-      "id": "count_override",
-      "label": "Numero capi manuale",
-      "info": "Opzionale. Sovrascrive il metafield custom.totale_produzione."
     },
 
     { "type": "header", "content": "Tipografia" },

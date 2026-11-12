@@ -7,6 +7,9 @@
   @param {boolean} [show_sale_price_first] - Whether to show the sale price first
 {%- enddoc -%}
 
+{%- # Eight Roma: products on the coming-soon template never show a price -%}
+{%- unless product_resource.template_suffix == 'coming-soon' -%}
+
 {% render 'price-styles' %}
 
 {%- liquid
@@ -134,3 +137,4 @@
     {{- 'content.volume_pricing_available' | t -}}
   </small>
 {%- endif -%}
+{%- endunless -%}

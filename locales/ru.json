@@ -168,6 +168,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Стоимость доставки</a> рассчитывается при оформлении заказа.",
     "taxes_included": "Налоги включены.",
     "product_badge_sold_out": "Распродано",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Распродажа",
     "search_input_label": "Поиск",
     "search_input_placeholder": "Поиск",

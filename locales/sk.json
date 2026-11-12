@@ -168,6 +168,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Doprava</a> sa vypočíta v pokladni.",
     "taxes_included": "Vrátane daní.",
     "product_badge_sold_out": "Vypredané",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Zľava",
     "search_input_label": "Vyhľadať",
     "search_input_placeholder": "Vyhľadať",

@@ -164,6 +164,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beregnes i kassen.",
     "taxes_included": "Avgifter inkludert.",
     "product_badge_sold_out": "Utsolgt",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Salg",
     "search_input_label": "Søk",
     "search_input_placeholder": "Søk",

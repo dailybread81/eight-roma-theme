@@ -1,0 +1,181 @@
+{%- doc -%}
+  Eight Roma — color siblings.
+
+  Shows the products listed in the `custom.sibilings` metafield (list of product
+  references) as color swatches that link to each product, with the current product
+  marked as selected. Each swatch uses, in order: the color, then the image, of the
+  product's `shopify.color-pattern` category metafield; otherwise the product's
+  featured image. The color name comes from the same metafield when present.
+  Renders nothing when there are fewer than two products to show.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign product_resource = closest.product
+  assign siblings = product_resource.metafields.custom.sibilings.value | compact
+
+  # The current product is shown first when the list doesn't already include it
+  assign sibling_ids = siblings | map: 'id'
+  assign total = siblings.size
+  assign prepend_current = false
+  unless sibling_ids contains product_resource.id
+    assign prepend_current = true
+    assign total = total | plus: 1
+  endunless
+
+  assign current_color = product_resource.metafields.shopify['color-pattern'].value | first
+  assign current_label = current_color.label.value
+-%}
+
+{%- if total > 1 -%}
+  {%- assign label_id = 'EightSiblings-' | append: block.id -%}
+  <div
+    class="eight-siblings spacing-style"
+    style="
+      {% render 'spacing-style', settings: block_settings %}
+      --eight-sibling-size: {{ block_settings.swatch_size }}px;
+      --eight-sibling-ratio: {{ block_settings.swatch_ratio }};
+    "
+    {{ block.shopify_attributes }}
+  >
+    <div class="eight-siblings__list" role="group" aria-labelledby="{{ label_id }}">
+      <p class="eight-siblings__label" id="{{ label_id }}">
+        {{- block_settings.heading | escape -}}
+        {%- if current_label != blank -%}
+          <span class="eight-siblings__value">{{ current_label | escape }}</span>
+        {%- endif -%}
+      </p>
+
+      {%- if prepend_current -%}
+        {% render 'eight-sibling-swatch', item: product_resource, current_product: product_resource %}
+      {%- endif -%}
+      {%- for item in siblings -%}
+        {% render 'eight-sibling-swatch', item: item, current_product: product_resource %}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .eight-siblings__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+  }
+
+  .eight-siblings__label {
+    flex-basis: 100%;
+    margin: 0 0 var(--margin-xs);
+    color: var(--variant-option-label-color, var(--color-foreground));
+  }
+
+  .eight-siblings__value {
+    margin-inline-start: 0.5em;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+  }
+
+  .eight-siblings__link {
+    display: block;
+    border-radius: var(--variant-picker-swatch-radius, 0);
+    outline-offset: var(--focus-outline-offset, 2px);
+    transition: outline-color var(--animation-speed) var(--animation-easing);
+  }
+
+  .eight-siblings__swatch {
+    display: block;
+    inline-size: var(--eight-sibling-size);
+    aspect-ratio: var(--eight-sibling-ratio);
+    border-radius: inherit;
+    background: var(--eight-sibling-background, rgb(var(--color-foreground-rgb) / var(--opacity-10, 0.1)));
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1px rgb(var(--color-foreground-rgb) / var(--style-border-swatch-opacity, 0.1));
+  }
+
+  .eight-siblings__link:hover {
+    outline: var(--focus-outline-width, 1px) solid var(--color-variant-hover-border, currentColor);
+  }
+
+  .eight-siblings__link[aria-current='page'] {
+    outline: var(--focus-outline-width, 1px) solid var(--color-selected-variant-border, currentColor);
+  }
+
+  .eight-siblings__link--sold-out .eight-siblings__swatch {
+    opacity: 0.4;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.eight_siblings",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.eight_siblings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.eight_siblings_heading",
+      "default": "Colour"
+    },
+    {
+      "type": "range",
+      "id": "swatch_size",
+      "label": "t:settings.eight_siblings_swatch_size",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "swatch_ratio",
+      "label": "t:settings.eight_siblings_swatch_ratio",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:options.eight_siblings_square"
+        },
+        {
+          "value": "3 / 4",
+          "label": "t:options.eight_siblings_portrait"
+        }
+      ],
+      "default": "3 / 4"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.eight_siblings",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

@@ -56,10 +56,23 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "details": {
+          "type": "text",
+          "name": "t:names.content",
+          "settings": {
+            "text": "<p>For questions about orders, sizing or collaborations, write to us at <a href=\"mailto:info@eight-roma.it\">info@eight-roma.it</a> or fill in the form below.</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "title",
+        "details",
         "content"
       ],
       "settings": {
@@ -90,7 +103,7 @@
               "type": "contact-form-submit-button",
               "static": true,
               "settings": {
-                "label": "Submit",
+                "label": "Send",
                 "style_class": "button",
                 "width": "fit-content",
                 "custom_width": 100,
@@ -132,10 +145,57 @@
         "padding-block-start": 32,
         "padding-block-end": 32
       }
+    },
+    "stores": {
+      "type": "eight-store-locator",
+      "blocks": {
+        "store_gambero": {
+          "type": "store",
+          "settings": {
+            "name": "Eight Store — Via del Gambero",
+            "address": "Via del Gambero 34\n00187 Rome, Italy",
+            "map_query": "Eight Store, Via del Gambero 34, 00187 Roma",
+            "hours": "<p>Every day 11:00–19:30</p>",
+            "phone": "06 2296 5951",
+            "email": "info@eight-roma.it",
+            "directions_label": "Directions"
+          }
+        },
+        "store_euripide": {
+          "type": "store",
+          "settings": {
+            "name": "Eight — Via Euripide",
+            "address": "Via Euripide 4\n00125 Rome, Italy",
+            "map_query": "Eight, Via Euripide 4, 00125 Roma",
+            "hours": "<p>Monday–Saturday 9:30–13:00, 16:00–19:30<br>Sunday closed</p>",
+            "phone": "06 2296 5951",
+            "email": "info@eight-roma.it",
+            "directions_label": "Directions"
+          }
+        }
+      },
+      "block_order": [
+        "store_gambero",
+        "store_euripide"
+      ],
+      "settings": {
+        "heading": "Find us",
+        "heading_preset": "h3",
+        "text": "<p>Our stores in Rome.</p>",
+        "show_map": true,
+        "map_height": 480,
+        "map_zoom": 15,
+        "consent_text": "The map is provided by Google Maps, which may set third-party cookies.",
+        "load_map_label": "Show map",
+        "show_on_map_label": "View on map",
+        "padding-block-start": 64,
+        "padding-block-end": 96
+      }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "stores"
   ]
 }

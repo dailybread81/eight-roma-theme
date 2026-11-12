@@ -166,6 +166,7 @@
     "shipping_policy_html": "<a href=\"{{ link }}\">Taxele de expediere</a> sunt calculate la finalizarea comenzii.",
     "taxes_included": "Impozite incluse.",
     "product_badge_sold_out": "Stoc epuizat",
+    "product_badge_coming_soon": "Coming soon",
     "product_badge_sale": "Promoție",
     "grid_view": {
       "default_view": "Implicit",

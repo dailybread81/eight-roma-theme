@@ -13,8 +13,13 @@
   {{ block.shopify_attributes }}
 >
   <span class="footer-utilities__text">
-    &copy; {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url -}}
+    &copy;
+    {%- if block_settings.show_year != false %} {{ 'now' | date: '%Y' }}{% endif %}
+    {% if block_settings.copyright_text != blank -%}
+      {{- block_settings.copyright_text -}}
+    {%- else -%}
+      {{- shop.name | link_to: routes.root_url -}}
+    {%- endif -%}
     {%- if block_settings.show_powered_by -%}
       , {{ powered_by_link }}
     {%- endif -%}
@@ -32,6 +37,18 @@
   "name": "t:names.copyright",
   "tag": null,
   "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "copyright_text",
+      "label": "t:settings.eight_copyright_text",
+      "info": "t:info.eight_copyright_text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_year",
+      "label": "t:settings.eight_copyright_show_year",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "show_powered_by",
