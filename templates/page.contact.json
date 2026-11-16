@@ -156,6 +156,7 @@
             "address": "Via del Gambero 34\n00187 Rome, Italy",
             "map_query": "Eight Store, Via del Gambero 34, 00187 Roma",
             "hours": "<p>Every day 11:00–19:30</p>",
+            "schema_hours": "Mo-Su 11:00-19:30",
             "phone": "06 2296 5951",
             "email": "info@eight-roma.it",
             "directions_label": "Directions"
@@ -168,6 +169,7 @@
             "address": "Via Euripide 4\n00125 Rome, Italy",
             "map_query": "Eight, Via Euripide 4, 00125 Roma",
             "hours": "<p>Monday–Saturday 9:30–13:00, 16:00–19:30<br>Sunday closed</p>",
+            "schema_hours": "Mo-Sa 09:30-13:00, Mo-Sa 16:00-19:30",
             "phone": "06 2296 5951",
             "email": "info@eight-roma.it",
             "directions_label": "Directions"

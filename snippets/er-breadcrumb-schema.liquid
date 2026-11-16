@@ -1,0 +1,54 @@
+{% doc %}
+  Outputs BreadcrumbList structured data on product and collection pages
+  (Home > Collection > Product). Renders nothing elsewhere.
+
+  @example
+  {% render 'er-breadcrumb-schema' %}
+{% enddoc %}
+
+{%- liquid
+  assign crumb_collection = collection
+  if request.page_type == 'product' and crumb_collection == blank
+    # Prefer a category collection over catch-all ones
+    for product_collection in product.collections
+      if product_collection.handle == 'eight-roma' or product_collection.handle == 'all' or product_collection.handle == 'frontpage'
+        continue
+      endif
+      assign crumb_collection = product_collection
+      break
+    endfor
+  endif
+-%}
+
+{%- if request.page_type == 'product' or request.page_type == 'collection' and collection -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": {{ shop.name | json }},
+          "item": {{ shop.url | append: routes.root_url | json }}
+        }
+        {%- if crumb_collection -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ crumb_collection.title | json }},
+            "item": {{ shop.url | append: crumb_collection.url | json }}
+          }
+        {%- endif -%}
+        {%- if request.page_type == 'product' -%}
+          ,{
+            "@type": "ListItem",
+            "position": {% if crumb_collection %}3{% else %}2{% endif %},
+            "name": {{ product.title | json }},
+            "item": {{ shop.url | append: product.url | json }}
+          }
+        {%- endif %}
+      ]
+    }
+  </script>
+{%- endif -%}

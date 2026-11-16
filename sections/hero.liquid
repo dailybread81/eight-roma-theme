@@ -1,6 +1,11 @@
 
 
 {% liquid
+  # Always output an alt attribute: image alt from Files, or empty when none is set
+  assign image_1_alt = section.settings.image_1.alt | default: ''
+  assign image_2_alt = section.settings.image_2.alt | default: ''
+  assign image_1_mobile_alt = section.settings.image_1_mobile.alt | default: ''
+  assign image_2_mobile_alt = section.settings.image_2_mobile.alt | default: ''
   assign media_count = 0
   assign media_count_mobile = 0
   assign fallback_to_desktop = false
@@ -139,7 +144,7 @@
           width: section.settings.image_1.width,
           widths: widths,
           height: section.settings.image_1.height,
-          alt: section.settings.image_1.alt,
+          alt: image_1_alt,
           class: 'hero__media',
           sizes: sizes,
           fetchpriority: fetch_priority,
@@ -155,7 +160,7 @@
           width: section.settings.image_1.width,
           widths: widths,
           height: section.settings.image_1.height,
-          alt: section.settings.image_1.alt,
+          alt: image_1_alt,
           class: 'hero__media',
           sizes: sizes,
           fetchpriority: fetch_priority,
@@ -191,7 +196,7 @@
             width: section.settings.image_1_mobile.width,
             widths: mobile_widths,
             height: section.settings.image_1_mobile.height,
-            alt: section.settings.image_1_mobile.alt,
+            alt: image_1_mobile_alt,
             class: 'hero__media',
             sizes: sizes_mobile,
             fetchpriority: fetch_priority,
@@ -243,7 +248,7 @@
           width: section.settings.image_2.width,
           widths: widths,
           height: section.settings.image_2.height,
-          alt: section.settings.image_2.alt,
+          alt: image_2_alt,
           class: 'hero__media',
           sizes: sizes,
           fetchpriority: fetch_priority,
@@ -259,7 +264,7 @@
           width: section.settings.image_2.width,
           widths: widths,
           height: section.settings.image_2.height,
-          alt: section.settings.image_2.alt,
+          alt: image_2_alt,
           class: 'hero__media',
           sizes: sizes,
           fetchpriority: fetch_priority,
@@ -295,7 +300,7 @@
             width: section.settings.image_2_mobile.width,
             widths: mobile_widths,
             height: section.settings.image_2_mobile.height,
-            alt: section.settings.image_2_mobile.alt,
+            alt: image_2_mobile_alt,
             class: 'hero__media',
             sizes: sizes_mobile,
             fetchpriority: fetch_priority,

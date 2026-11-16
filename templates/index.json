@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>FW26</h1>",
+            "text": "<h2>FW26</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

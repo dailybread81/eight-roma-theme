@@ -124,6 +124,28 @@
     ]
   },
   {
+    "name": "t:names.eight_structured_data",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:info.eight_structured_data"
+      },
+      {
+        "type": "text",
+        "id": "eight_legal_name",
+        "label": "t:settings.eight_legal_name",
+        "default": "Black Cloth Srls"
+      },
+      {
+        "type": "textarea",
+        "id": "eight_same_as",
+        "label": "t:settings.eight_same_as",
+        "info": "t:info.eight_same_as",
+        "default": "https://www.instagram.com/eight_roma/"
+      }
+    ]
+  },
+  {
     "name": "t:names.typography",
     "settings": [
       {
