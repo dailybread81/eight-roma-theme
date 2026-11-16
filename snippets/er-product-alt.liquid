@@ -1,0 +1,29 @@
+{% doc %}
+  Outputs a fallback alt text for product images that have none in admin:
+  the product's SEO title if set, otherwise the product title plus its colour
+  (see er-product-color), prefixed with the shop name.
+  e.g. "Eight Roma Hoodie – Burgundy", "Eight Roma Tote Bag – Grey, Script Logo"
+
+  @param {object} product - The product.
+
+  @example
+  {% capture alt_fallback %}{% render 'er-product-alt', product: product %}{% endcapture %}
+{% enddoc %}
+
+{%- liquid
+  assign alt_name = product.metafields.global.title_tag | strip
+  if alt_name == blank
+    capture alt_color
+      render 'er-product-color', product: product
+    endcapture
+    assign alt_color = alt_color | strip
+    assign alt_name = product.title
+    if alt_color != blank
+      assign alt_name = alt_name | append: ' – ' | append: alt_color
+    endif
+  endif
+  unless alt_name contains shop.name
+    assign alt_name = shop.name | append: ' ' | append: alt_name
+  endunless
+  echo alt_name
+-%}
