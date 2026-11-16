@@ -26,6 +26,10 @@
 {%- endif -%}
 {%- liquid
   assign selected_product = closest.product
+  capture er_alt_fallback
+    render 'er-product-alt', product: selected_product
+  endcapture
+  assign er_alt_fallback = er_alt_fallback | strip
   assign selected_variant_media = selected_product.selected_or_first_available_variant.featured_media
   assign first_3d_model = selected_product.media | where: 'media_type', 'model' | first
 
@@ -378,10 +382,10 @@
           {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
             <div
               class="product-media-constraint-wrapper">
-              {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+              {%- render 'product-media', alt_fallback: er_alt_fallback, media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
             </div>
           {% else %}
-            {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+            {%- render 'product-media', alt_fallback: er_alt_fallback, media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
           {% endif %}
         {% endcapture %}
         {% capture class %}
@@ -493,10 +497,10 @@
             -%}
             {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
               <div class="product-media-constraint-wrapper">
-                {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+                {%- render 'product-media', alt_fallback: er_alt_fallback, media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
               </div>
             {% else %}
-              {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+              {%- render 'product-media', alt_fallback: er_alt_fallback, media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
             {% endif %}
           </li>
         {% endfor %}
@@ -548,6 +552,7 @@
                     {% endif %}
                   >
                     {% liquid
+                      assign thumb_alt = media.alt | default: er_alt_fallback
                       assign focal_point_style = ''
                       if media.presentation.focal_point != blank
                         assign focal_point_style = 'object-position: ' | append: media.presentation.focal_point | append: ';'
@@ -560,7 +565,7 @@
                         loading: 'lazy',
                         sizes: 'auto, 110, (min-width: 750px) 160',
                         widths: '240, 352, 832, 1200',
-                        alt: media.alt,
+                        alt: thumb_alt,
                         style: focal_point_style
                       | escape
                     }}
@@ -584,7 +589,7 @@
               >
                 {% if media.media_type == 'image' %}
                   <drag-zoom-wrapper class="product-media__drag-zoom-wrapper">
-                    {%- render 'product-media',
+                    {%- render 'product-media', alt_fallback: er_alt_fallback,
                       media: media,
                       sizes: '100vw',
                       loading: 'lazy',
@@ -593,7 +598,7 @@
                     -%}
                   </drag-zoom-wrapper>
                 {% else %}
-                  {%- render 'product-media',
+                  {%- render 'product-media', alt_fallback: er_alt_fallback,
                     media: media,
                     sizes: '100vw',
                     loading: 'lazy',
