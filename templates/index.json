@@ -142,7 +142,6 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
             "collection_card_gap": 8,
-            "background_color": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -218,7 +217,6 @@
         "icons_shape": "none",
         "section_width": "full-width",
         "gap": 0,
-        "background_color": "",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -235,7 +233,6 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
             "collection_card_gap": 8,
-            "background_color": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -312,7 +309,6 @@
         "icons_shape": "none",
         "section_width": "full-width",
         "gap": 0,
-        "background_color": "",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -394,7 +390,6 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
             "collection_card_gap": 8,
-            "background_color": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -471,9 +466,71 @@
         "icons_shape": "none",
         "section_width": "full-width",
         "gap": 0,
-        "background_color": "",
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "eight_brand_faq": {
+      "type": "eight-brand-faq",
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "Where are Eight Roma clothes made?",
+            "answer": "<p>Every piece is designed in Rome and made in Italy.</p>"
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "Is Eight Roma genderless?",
+            "answer": "<p>Yes. Our pieces are designed to be worn by anyone, in sizes from S to XL. Each product page has a size guide with full measurements.</p>"
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "How do Eight Roma pieces fit?",
+            "answer": "<p>Most styles have a relaxed fit: room to move, with a tailored finish. The size guide on each product shows the exact measurements.</p>"
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "Are Eight Roma pieces limited?",
+            "answer": "<p>Many styles are made in small, numbered runs. The product page shows how many pieces exist, and once they're gone they don't come back.</p>"
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "Where are the Eight Roma stores in Rome?",
+            "answer": "<p>Eight Store, Via del Gambero 34, open every day 11:00–19:30. Eight, Via Euripide 4, open Monday to Saturday 9:30–13:00 and 16:00–19:30.</p>"
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "How do shipping and returns work?",
+            "answer": "<p>Orders within Italy arrive in 3–5 business days. Standard shipping is free over €130, otherwise €9. You can return any item within 14 days of delivery: return shipping is at your expense, unless the item has a manufacturing defect, in which case we cover it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6"
+      ],
+      "settings": {
+        "brand_heading": "Street roots, tailor's hands.",
+        "brand_text": "<p>Eight started with a garment we made for ourselves, when no brand spoke our language. Our mother taught pattern cutting and tailoring; we grew up between the workbench and the street. Today every piece is designed in Rome and made in Italy: genderless, relaxed in the fit, with exposed seams worn proudly on the outside. Many styles are produced in small numbered runs. You can find us online and in our two stores in Rome.</p>",
+        "faq_heading": "FAQ",
+        "heading_preset": "h3",
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     }
   },
@@ -482,6 +539,7 @@
     "collection_list_DMKGNH",
     "collection_list_EXnb4r",
     "hero_MVUtj6",
-    "collection_list_rPkfRJ"
+    "collection_list_rPkfRJ",
+    "eight_brand_faq"
   ]
 }
