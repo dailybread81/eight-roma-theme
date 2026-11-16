@@ -1,0 +1,300 @@
+{% comment %}
+  Section contract.
+  Eight Roma brand story and FAQ: a short brand text followed by questions and
+  answers (one block each). Answers are plain HTML inside native <details>, so they
+  stay readable by search engines and AI crawlers without JavaScript, and the same
+  blocks generate the FAQPage structured data.
+  @example
+  <!-- Add "Brand & FAQ" to the home page and add one Question block per FAQ -->
+{% endcomment %}
+
+{%- liquid
+  if section.settings.background_color != blank
+    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+<div
+  class="section section--page-width{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+>
+  <div
+    class="eight-faq spacing-style"
+    style="{% render 'spacing-style', settings: section.settings %}"
+  >
+    {%- if section.settings.brand_heading != blank or section.settings.brand_text != blank -%}
+      <div class="eight-faq__brand">
+        {%- if section.settings.brand_heading != blank -%}
+          <h2 class="eight-faq__brand-heading {{ section.settings.heading_preset }}">
+            {{- section.settings.brand_heading | escape -}}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.brand_text != blank -%}
+          <div class="eight-faq__brand-text rte">{{ section.settings.brand_text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="eight-faq__questions">
+        {%- if section.settings.faq_heading != blank -%}
+          <h2 class="eight-faq__heading {{ section.settings.heading_preset }}">
+            {{- section.settings.faq_heading | escape -}}
+          </h2>
+        {%- endif -%}
+        <div class="eight-faq__list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.question != blank and block.settings.answer != blank -%}
+              <details class="eight-faq__item" {{ block.shopify_attributes }}>
+                <summary class="eight-faq__question">
+                  <h3 class="eight-faq__question-text">{{ block.settings.question | escape }}</h3>
+                  <span class="eight-faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="eight-faq__answer rte">{{ block.settings.answer }}</div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if section.blocks.size > 0 -%}
+  {%- comment -%} FAQPage data built from the same blocks shown above. {%- endcomment -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- assign first_question = true -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.question != blank and block.settings.answer != blank -%}
+            {%- unless first_question %},{% endunless -%}
+            {
+              "@type": "Question",
+              "name": {{ block.settings.question | strip | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ block.settings.answer | strip_html | strip | json }}
+              }
+            }
+            {%- assign first_question = false -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% stylesheet %}
+  .eight-faq {
+    display: grid;
+    gap: var(--gap-3xl, 64px);
+    min-width: 0;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+      align-items: start;
+    }
+  }
+
+  .eight-faq__brand,
+  .eight-faq__questions {
+    display: grid;
+    gap: var(--gap-md, 16px);
+    min-width: 0;
+  }
+
+  .eight-faq__brand-heading,
+  .eight-faq__heading {
+    margin: 0;
+  }
+
+  .eight-faq__brand-text {
+    max-inline-size: 36rem;
+  }
+
+  .eight-faq__brand-text > :last-child,
+  .eight-faq__answer > :last-child {
+    margin-block-end: 0;
+  }
+
+  .eight-faq__list {
+    border-block-start: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-20, 0.2));
+  }
+
+  .eight-faq__item {
+    border-block-end: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-20, 0.2));
+  }
+
+  .eight-faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md, 16px);
+    min-block-size: 44px;
+    padding-block: var(--padding-md, 16px);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .eight-faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .eight-faq__question-text {
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    overflow-wrap: anywhere;
+  }
+
+  .eight-faq__icon {
+    position: relative;
+    flex: none;
+    inline-size: 12px;
+    block-size: 12px;
+  }
+
+  .eight-faq__icon::before,
+  .eight-faq__icon::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 1px;
+    background-color: currentColor;
+    transition: transform var(--animation-speed) var(--animation-easing);
+  }
+
+  .eight-faq__icon::after {
+    transform: rotate(90deg);
+  }
+
+  .eight-faq__item[open] .eight-faq__icon::after {
+    transform: rotate(0deg);
+  }
+
+  .eight-faq__answer {
+    max-inline-size: 42rem;
+    padding-block-end: var(--padding-lg, 20px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eight-faq__icon::before,
+    .eight-faq__icon::after {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.eight_brand_faq",
+  "tag": "section",
+  "class": "eight-brand-faq-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_heading",
+      "label": "t:settings.eight_faq_brand_heading"
+    },
+    {
+      "type": "richtext",
+      "id": "brand_text",
+      "label": "t:settings.eight_faq_brand_text"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "t:settings.eight_faq_heading",
+      "default": "FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_preset",
+      "label": "t:settings.preset",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:options.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:options.h4"
+        }
+      ],
+      "default": "h3"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "t:names.eight_faq_question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "t:settings.eight_faq_question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "t:settings.eight_faq_answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.eight_brand_faq",
+      "blocks": [
+        {
+          "type": "question"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
