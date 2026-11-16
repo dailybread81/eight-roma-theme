@@ -20,7 +20,7 @@
   endif
 
   if color == blank
-    assign color_map = 'black:Black,nero:Black,nera:Black,white:White,bianco:White,bianca:White,grey:Grey,gray:Grey,grigio:Grey,grigia:Grey,anthracite:Anthracite,antracite:Anthracite,blue:Blue,blu:Blue,navy:Navy,green:Green,verde:Green,red:Red,rosso:Red,rossa:Red,pink:Pink,rosa:Pink,yellow:Yellow,giallo:Yellow,gialla:Yellow,brown:Brown,marrone:Brown,beige:Beige,bordeaux:Bordeaux,burgundy:Burgundy,cream:Cream,ecru:Ecru,camel:Camel,olive:Olive,khaki:Khaki,orange:Orange,arancione:Orange,purple:Purple,viola:Purple,pinstripe:Pinstripe,paisley:Paisley,camouflage:Camouflage,camo:Camouflage' | split: ','
+    assign color_map = 'black:Black,nero:Black,nera:Black,white:White,bianco:White,bianca:White,grey:Grey,gray:Grey,grigio:Grey,grigia:Grey,anthracite:Anthracite,antracite:Anthracite,blue:Blue,blu:Blue,navy:Navy,green:Green,verde:Green,red:Red,rosso:Red,rossa:Burgundy,pink:Pink,rosa:Pink,yellow:Yellow,giallo:Yellow,gialla:Yellow,brown:Brown,marrone:Brown,beige:Beige,bordeaux:Bordeaux,burgundy:Burgundy,cream:Cream,ecru:Ecru,camel:Camel,olive:Olive,khaki:Khaki,orange:Orange,arancione:Orange,purple:Purple,viola:Purple,pinstripe:Pinstripe,paisley:Paisley,camouflage:Camouflage,camo:Camouflage' | split: ','
     assign parts = product.handle | split: '-' | reverse
     assign pending_joiner = ''
 
