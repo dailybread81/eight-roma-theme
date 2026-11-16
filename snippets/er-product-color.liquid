@@ -1,0 +1,71 @@
+{% doc %}
+  Outputs the product colour as plain text (e.g. "Pink", "Yellow Blue"), or nothing.
+  Used by meta-tags to tell colour variants apart in page titles.
+  Source order: the Shopify category metafield "Color" (shopify.color-pattern), then
+  the colour words at the end of the product handle (English or Italian, e.g.
+  "check-shirt-green", "felpa-cappuccio-nera-1").
+
+  @param {object} product - The product.
+
+  @example
+  {% capture color %}{% render 'er-product-color', product: product %}{% endcapture %}
+{% enddoc %}
+
+{%- liquid
+  assign color = ''
+
+  assign color_pattern = product.metafields.shopify['color-pattern'].value
+  if color_pattern != blank
+    assign color = color_pattern | map: 'label' | join: ' / '
+  endif
+
+  if color == blank
+    assign color_map = 'black:Black,nero:Black,nera:Black,white:White,bianco:White,bianca:White,grey:Grey,gray:Grey,grigio:Grey,grigia:Grey,anthracite:Anthracite,antracite:Anthracite,blue:Blue,blu:Blue,navy:Navy,green:Green,verde:Green,red:Red,rosso:Red,rossa:Burgundy,pink:Pink,rosa:Pink,yellow:Yellow,giallo:Yellow,gialla:Yellow,brown:Brown,marrone:Brown,beige:Beige,bordeaux:Bordeaux,burgundy:Burgundy,cream:Cream,ecru:Ecru,camel:Camel,olive:Olive,khaki:Khaki,orange:Orange,arancione:Orange,purple:Purple,viola:Purple,pinstripe:Pinstripe,paisley:Paisley,camouflage:Camouflage,camo:Camouflage' | split: ','
+    assign parts = product.handle | split: '-' | reverse
+    assign pending_joiner = ''
+
+    for part in parts
+      # Skip trailing duplicate counters such as "-1", "-2"
+      assign as_number = part | plus: 0 | append: ''
+      if as_number == part and color == blank
+        continue
+      endif
+
+      # "beige-e-blu" / "beige-and-blue" -> "Beige & Blue"
+      if color != blank and pending_joiner == ''
+        if part == 'e' or part == 'and'
+          assign pending_joiner = '& '
+          continue
+        endif
+      endif
+
+      assign label = ''
+      for pair in color_map
+        assign key = pair | split: ':' | first
+        if key == part
+          assign label = pair | split: ':' | last
+          break
+        endif
+      endfor
+
+      if label == blank
+        break
+      endif
+
+      if color == blank
+        assign color = label
+      else
+        assign color = label | append: ' ' | append: pending_joiner | append: color
+        assign pending_joiner = ''
+      endif
+    endfor
+  endif
+
+  if color != blank
+    assign title_down = product.title | downcase
+    assign color_down = color | downcase
+    unless title_down contains color_down
+      echo color
+    endunless
+  endif
+-%}

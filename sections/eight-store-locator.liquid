@@ -128,6 +128,60 @@
       {%- endif -%}
     </div>
   </eight-store-locator>
+
+  {%- comment -%} One ClothingStore per store block, linked to the Organization in the header. {%- endcomment -%}
+  <script type="application/ld+json">
+    [
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign address_lines = block.settings.address | strip | newline_to_br | split: '<br />'
+          assign street = address_lines | first | strip
+          assign city_line = address_lines[1] | strip | split: ',' | first | strip
+          assign postal_code = city_line | split: ' ' | first
+          assign locality = city_line | remove_first: postal_code | strip
+          assign store_query = block.settings.map_query | default: block.settings.address | newline_to_br | replace: '<br />', ', ' | strip_html | strip_newlines
+          assign hours = block.settings.schema_hours | split: ','
+          assign map_url = store_query | url_encode | prepend: 'https://www.google.com/maps/search/?api=1&query='
+        -%}
+        {
+          "@context": "https://schema.org",
+          "@type": "ClothingStore",
+          "@id": {{ shop.url | append: request.path | append: '#' | append: block.id | json }},
+          "name": {{ block.settings.name | json }},
+          "url": {{ shop.url | append: request.path | json }},
+          "parentOrganization": { "@id": {{ shop.url | append: '/#organization' | json }} }
+          {%- if settings.logo -%}
+            ,"image": {{ settings.logo | image_url: width: 500 | prepend: 'https:' | json }}
+          {%- endif -%}
+          {%- if street != blank -%}
+            ,"address": {
+              "@type": "PostalAddress",
+              "streetAddress": {{ street | json }},
+              "postalCode": {{ postal_code | json }},
+              "addressLocality": {{ locality | json }},
+              "addressCountry": {{ shop.address.country_code | default: 'IT' | json }}
+            }
+          {%- endif -%}
+          {%- if block.settings.phone != blank -%}
+            ,"telephone": {{ block.settings.phone | json }}
+          {%- endif -%}
+          {%- if block.settings.email != blank -%}
+            ,"email": {{ block.settings.email | json }}
+          {%- endif -%}
+          {%- if store_query != blank -%}
+            ,"hasMap": {{ map_url | json }}
+          {%- endif -%}
+          {%- if block.settings.schema_hours != blank -%}
+            ,"openingHours": [
+              {%- for range in hours -%}
+                {{- range | strip | json -}}{%- unless forloop.last -%},{%- endunless -%}
+              {%- endfor -%}
+            ]
+          {%- endif %}
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  </script>
 </div>
 
 {% stylesheet %}
@@ -205,6 +259,13 @@
     flex-wrap: wrap;
     gap: var(--gap-md, 16px);
     margin-block-start: var(--margin-xs, 8px);
+  }
+
+  .eight-stores__contacts a,
+  .eight-stores__link {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 24px;
   }
 
   .eight-stores__link {
@@ -397,6 +458,12 @@
           "type": "richtext",
           "id": "hours",
           "label": "t:settings.eight_store_hours"
+        },
+        {
+          "type": "text",
+          "id": "schema_hours",
+          "label": "t:settings.eight_store_schema_hours",
+          "info": "t:info.eight_store_schema_hours"
         },
         {
           "type": "text",
