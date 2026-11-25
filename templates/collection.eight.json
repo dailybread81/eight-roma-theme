@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+            "text": "<p>Street roots, tailor’s hands. Every piece is a manifesto of freedom, made to move with you.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
